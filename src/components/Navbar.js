@@ -30,7 +30,7 @@ function Navbar() {
    <nav className='navbar'>
      <div className= 'navbar-container'>
        <Link to='/' className= 'navbar-logo' onClick={closeMobileMenu}>
-        Fs Tétouan 
+        FS-Tétouan 
        </Link>
        <div className='menu-icon' onClick={handleClick}>
         <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -38,29 +38,29 @@ function Navbar() {
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
                 <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                    home
+                    Accueil
                 </Link>
             </li>
             <li>
             <Link to='/projets' className='nav-links' onClick={closeMobileMenu}>
-                    projets
+                    Projets
                 </Link>
             </li>
 
 
             <li className='nav-item'>
                 <Link to='/contact' className='nav-links' onClick={closeMobileMenu}>
-                    contact
+                    Contacts
                 </Link>
             </li>
             
             <li className='nav-item'>
                 <Link to='/consiel' className='nav-links-mobile' onClick={closeMobileMenu}>
-                conseil pfe
+                Conseil PFE
                 </Link>
             </li>
         </ul>
-        {button && <Button3 buttonStyle='btn-outline' > conseil pfe</Button3>}
+        {button && <Button3 buttonStyle='btn-outline' > Conseil PFE</Button3>}
 
    </div>
   </nav>
