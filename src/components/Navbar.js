@@ -55,7 +55,7 @@ function Navbar() {
             </li>
             
             <li className='nav-item'>
-                <Link to='/consiel' className='nav-links-mobile' onClick={closeMobileMenu}>
+                <Link to='/conseil' className='nav-links-mobile' onClick={closeMobileMenu}>
                 Conseil PFE
                 </Link>
             </li>
