@@ -7,7 +7,7 @@
   
   .home,
   .Contact,
-  .Consiel ,
+  .Conseil ,
   .Projets,
   .Conectez,
   .Inscrivez{
@@ -18,7 +18,7 @@
     font-size: 3rem;
   }
 
-.consiel {
+.conseil {
    /*background-image: url('/images/img-2.jpg');*/
     background-position: center;
     background-size: cover;
