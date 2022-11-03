@@ -10,7 +10,7 @@ export default function validateInfo(values) {
       }
 
       if (!values.apogee) {
-        errors.apogee = 'Apoge requis';
+        errors.apogee = 'Apogee requis';
       } else if (values.apogee.length !== 8) {
         errors.apogee = 'Apogee doit être 8 characters';
       } 
