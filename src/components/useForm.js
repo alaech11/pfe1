@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 const useForm = (callback, validate) => {
 
     const [values, setValues] = useState({
-        Nom: '',
-        Prenom: '',
-        Apogee: '',
-        Email: '',
+        nome: '',
+        prenome: '',
+        apogee: '',
+        email: '',
         password: '',
         password2: '',
  })
@@ -15,10 +15,10 @@ const useForm = (callback, validate) => {
  const [isSubmitting, setIsSubmitting] = useState(false)
 
  const handleChange = e => {
-    const {Nom, value} = e.target
+    const {name, value} = e.target
     setValues({
         ...values,
-        [Nom]: value
+        [name]: value
     })
  }
  const handleSubmit = e => {
