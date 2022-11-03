@@ -28,11 +28,11 @@ const Formsignup = ({submitForm}) => {
         </div>
 
         <div className='form-inputs'>
-            <label htmlFor='apoge' className='form-label'>
-                Apoge
+            <label htmlFor='apogee' className='form-label'>
+                Apogee
                 </label> 
-                <input type="number" name='apoge' className='form-input' placeholder='Enter votre apoge' value={values.apoge} onChange={handleChange}/>
-                {errors.apoge && <p>{errors.apoge}</p>}
+                <input type="number" name='apogee' className='form-input' placeholder='Enter votre Apogee' value={values.apogee} onChange={handleChange}/>
+                {errors.apogee && <p>{errors.apogee}</p>}
         </div>
 
         <div className='form-inputs'>
