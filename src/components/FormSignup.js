@@ -12,19 +12,19 @@ const Formsignup = ({submitForm}) => {
        <form className='form' onSubmit={handleSubmit}>
         <h1>Commencer à créer votre compte:</h1>
         <div className='form-inputs'>
-            <label htmlFor='nome' className='form-label'>
-                Nome
+            <label htmlFor='nom' className='form-label'>
+                Nom
             </label>
-            <input type="text" name='nome' className='form-input' placeholder='Enter votre nome' value={values.nome} onChange={handleChange}/>
-        {errors.nome && <p>{errors.nome}</p>}
+            <input type="text" name='nom' className='form-input' placeholder='Enter votre nom' value={values.nom} onChange={handleChange}/>
+        {errors.nom && <p>{errors.nom}</p>}
         </div>
 
         <div className='form-inputs'>
-            <label htmlFor='prenome' className='form-label'>
-             Prenome
+            <label htmlFor='prenom' className='form-label'>
+             Prenom
             </label>  
-              <input type="text" name='prenome' className='form-input' placeholder='Enter votre prenome' value={values.prenome} onChange={handleChange}/>
-              {errors.prenome && <p>{errors.prenome}</p>}
+              <input type="text" name='prenom' className='form-input' placeholder='Enter votre prenom' value={values.prenom} onChange={handleChange}/>
+              {errors.prenom && <p>{errors.prenom}</p>}
         </div>
 
         <div className='form-inputs'>
@@ -45,17 +45,17 @@ const Formsignup = ({submitForm}) => {
 
         <div className='form-inputs'>
             <label htmlFor='password' className='form-label'>
-            Mots de passe
+            Mot de passe
              </label>  
-              <input type="password" name='password' className='form-input' placeholder='Enter votre mots de passe' value={values.password} onChange={handleChange}/>
+              <input type="password" name='password' className='form-input' placeholder='Enter votre mot de passe' value={values.password} onChange={handleChange}/>
               {errors.password && <p>{errors.password}</p>}
         </div>  
 
         <div className='form-inputs'>
             <label htmlFor='password2' className='form-label'>
-           Confermer mots de passe
+           Confermer mot de passe
              </label>  
-              <input type="password" name='password2' className='form-input' placeholder='Enter votre mots de passe' value={values.password2} onChange={handleChange}/>
+              <input type="password" name='password2' className='form-input' placeholder='Enter votre mot de passe' value={values.password2} onChange={handleChange}/>
               {errors.password2 && <p>{errors.password2}</p>}
         </div>  
 
