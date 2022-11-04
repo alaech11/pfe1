@@ -15,7 +15,7 @@ const Formsignup = ({submitForm}) => {
             <label htmlFor='nom' className='form-label'>
                 Nom
             </label>
-            <input type="text" name='nom' className='form-input' placeholder='Enter votre nom' value={values.nom} onChange={handleChange}/>
+            <input type="text" name='nom' className='form-input' placeholder='Entrer votre nom' value={values.nom} onChange={handleChange}/>
         {errors.nom && <p>{errors.nom}</p>}
         </div>
 
@@ -23,7 +23,7 @@ const Formsignup = ({submitForm}) => {
             <label htmlFor='prenom' className='form-label'>
              Prenom
             </label>  
-              <input type="text" name='prenom' className='form-input' placeholder='Enter votre prenom' value={values.prenom} onChange={handleChange}/>
+              <input type="text" name='prenom' className='form-input' placeholder='Entrer votre prenom' value={values.prenom} onChange={handleChange}/>
               {errors.prenom && <p>{errors.prenom}</p>}
         </div>
 
@@ -31,7 +31,7 @@ const Formsignup = ({submitForm}) => {
             <label htmlFor='apogee' className='form-label'>
                 Apogee
                 </label> 
-                <input type="number" name='apogee' className='form-input' placeholder='Enter votre Apogee' value={values.apogee} onChange={handleChange}/>
+                <input type="number" name='apogee' className='form-input' placeholder='Entrer votre Apogee' value={values.apogee} onChange={handleChange}/>
                 {errors.apogee && <p>{errors.apogee}</p>}
         </div>
 
@@ -47,15 +47,15 @@ const Formsignup = ({submitForm}) => {
             <label htmlFor='password' className='form-label'>
             Mot de passe
              </label>  
-              <input type="password" name='password' className='form-input' placeholder='Enter votre mot de passe' value={values.password} onChange={handleChange}/>
+              <input type="password" name='password' className='form-input' placeholder='Entrer votre mot de passe' value={values.password} onChange={handleChange}/>
               {errors.password && <p>{errors.password}</p>}
         </div>  
 
         <div className='form-inputs'>
             <label htmlFor='password2' className='form-label'>
-           Confermer mot de passe
+           Confirmer mot de passe
              </label>  
-              <input type="password" name='password2' className='form-input' placeholder='Enter votre mot de passe' value={values.password2} onChange={handleChange}/>
+              <input type="password" name='password2' className='form-input' placeholder='Entrer votre mot de passe' value={values.password2} onChange={handleChange}/>
               {errors.password2 && <p>{errors.password2}</p>}
         </div>  
 
