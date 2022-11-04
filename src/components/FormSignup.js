@@ -7,6 +7,8 @@ import './Form.css'
 const Formsignup = ({submitForm}) => {
    const{handleChange, values, handleSubmit, errors} = useForm(submitForm, validate);
 
+   
+
   return (
     <div className='form-content-right'>
        <form className='form' onSubmit={handleSubmit}>
@@ -16,6 +18,7 @@ const Formsignup = ({submitForm}) => {
                 Nom
             </label>
             <input type="text" name='nom' className='form-input' placeholder='Entrer votre nom' value={values.nom} onChange={handleChange}/>
+            
         {errors.nom && <p>{errors.nom}</p>}
         </div>
 
@@ -34,6 +37,27 @@ const Formsignup = ({submitForm}) => {
                 <input type="number" name='apogee' className='form-input' placeholder='Entrer votre Apogee' value={values.apogee} onChange={handleChange}/>
                 {errors.apogee && <p>{errors.apogee}</p>}
         </div>
+
+        <div className='form-inputs'>
+            <label htmlFor='filière' className='form-label'>
+            Filière
+             </label>  
+             
+             <div class="input-group mb-3">
+            <select className='form-input' name='filière' onChange={handleChange} >
+            <option value=''>--selectioner  filière--</option>
+            <option value='A'>SMA</option>
+            <option value='I'>SMI</option>
+            <option value='P'>SMP</option>
+            <option value='C'>SMC</option>
+            <option value='VI'>SVI</option>
+            <option value='TU'>STU</option>
+            </select>
+            </div>
+              {errors.filière && <p>{errors.filière}</p>}
+             
+             
+        </div>  
 
         <div className='form-inputs'>
             <label htmlFor='email' className='form-label'>
