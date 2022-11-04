@@ -3,6 +3,6 @@ import '../../App.css'
 
 
 export default function Projets(){
-    return <index/>
+    return 
     
     }
