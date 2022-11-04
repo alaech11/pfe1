@@ -1,12 +1,12 @@
 export default function validateInfo(values) {
     let errors = {};
   
-    if (!values.nome.trim()) {
-      errors.nome = 'Nom requis';
+    if (!values.nom.trim()) {
+      errors.nom = 'Nom requis';
     }
 
-    if (!values.prenome.trim()) {
-        errors.prenome = 'Prenom requis';
+    if (!values.prenom.trim()) {
+        errors.prenom = 'Prenom requis';
       }
 
       if (!values.apogee) {
