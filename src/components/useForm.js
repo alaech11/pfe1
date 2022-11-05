@@ -12,7 +12,7 @@ const useForm = (callback, validate) => {
         password: '',
         password2: '',
  }) 
-  SaveEtudiant = async e =>{
+  SaveEtudiant = async e => {
       e.proventDefault();
 
       const res = await axios.post('http://127.0.0.1:8000/api/FromSignup',this.State);
@@ -30,10 +30,9 @@ const useForm = (callback, validate) => {
           });
 
       }
+    }
 
 
-
-     }
  const[errors, setErroes] = useState({})
 
  const [isSubmitting, setIsSubmitting] = useState(false)
