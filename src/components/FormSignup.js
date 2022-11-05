@@ -39,13 +39,13 @@ const Formsignup = ({submitForm}) => {
         </div>
 
         <div className='form-inputs'>
-            <label htmlFor='fillière' className='form-label'>
-            Fillière
+            <label htmlFor='filière' className='form-label'>
+            Filière
              </label>  
              
              <div class="input-group mb-3">
-            <select className='form-input' name='fillière' onChange={handleChange} >
-            <option value=''>--Selectioner  fillière--</option>
+            <select className='form-input' name='filière' onChange={handleChange} >
+            <option value=''>--Selectioner la filière--</option>
             <option value='A'>SMA</option>
             <option value='I'>SMI</option>
             <option value='P'>SMP</option>
@@ -54,7 +54,7 @@ const Formsignup = ({submitForm}) => {
             <option value='TU'>STU</option>
             </select>
             </div>
-              {errors.fillière && <p>{errors.fillière}</p>}
+              {errors.filière && <p>{errors.filière}</p>}
              
              
         </div>  
