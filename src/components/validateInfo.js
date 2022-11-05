@@ -15,8 +15,8 @@ export default function validateInfo(values) {
         errors.apogee = 'Apogee doit être 8 characters';
       } 
       
-      if (!values.filière) {
-        errors.filière = 'filière requis';}
+      if (!values.fillière) {
+        errors.fillière = 'fillière requis';}
     // else if (!/^[A-Za-z]+/.test(values.name.trim())) {
     //   errors.name = 'Enter a valid name';
     // }

@@ -6,7 +6,7 @@ const useForm = (callback, validate) => {
         nom: '',
         prenom: '',
         apogee: '',
-        filière: '',
+        fillière: '',
         email: '',
         password: '',
         password2: '',

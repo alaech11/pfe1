@@ -12,7 +12,7 @@ const Formsignup = ({submitForm}) => {
   return (
     <div className='form-content-right'>
        <form className='form' onSubmit={handleSubmit}>
-        <h1>Commencer à créer votre compte:</h1>
+        <h1>créer votre compte:</h1>
         <div className='form-inputs'>
             <label htmlFor='nom' className='form-label'>
                 Nom
@@ -39,13 +39,13 @@ const Formsignup = ({submitForm}) => {
         </div>
 
         <div className='form-inputs'>
-            <label htmlFor='filière' className='form-label'>
-            Filière
+            <label htmlFor='fillière' className='form-label'>
+            Fillière
              </label>  
              
              <div class="input-group mb-3">
-            <select className='form-input' name='filière' onChange={handleChange} >
-            <option value=''>--selectioner  filière--</option>
+            <select className='form-input' name='fillière' onChange={handleChange} >
+            <option value=''>--Selectioner  fillière--</option>
             <option value='A'>SMA</option>
             <option value='I'>SMI</option>
             <option value='P'>SMP</option>
@@ -54,7 +54,7 @@ const Formsignup = ({submitForm}) => {
             <option value='TU'>STU</option>
             </select>
             </div>
-              {errors.filière && <p>{errors.filière}</p>}
+              {errors.fillière && <p>{errors.fillière}</p>}
              
              
         </div>  
