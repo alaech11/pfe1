@@ -43,7 +43,31 @@ const useForm = (callback, validate) => {
           console.log(res.data.message);  
         }
      }*/
+
+
+    /* SaveEtudiant = async(e)=>{
+      e.proventDefault();
+
+      const res = await axios.post('http://127.0.0.1:8000/api/add-etudiant',this.State);
+      if(res.data.status === 200){
+           
+          console.log(res.data.message);
+          this.setState({
+            nom: '',
+            prenom: '',
+            apogee: '',
+            fillière: '',
+            email: '',
+            password: '',
+            password2: '',
+          });
+
+      }*/
+
+
+
+     }
   
-}
+
 
 export default useForm
