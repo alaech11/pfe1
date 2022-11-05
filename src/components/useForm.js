@@ -11,7 +11,29 @@ const useForm = (callback, validate) => {
         email: '',
         password: '',
         password2: '',
- })
+ }) 
+  SaveEtudiant = async e =>{
+      e.proventDefault();
+
+      const res = await axios.post('http://127.0.0.1:8000/api/FromSignup',this.State);
+      if(res.data.status === 200){
+           
+          console.log(res.data.message);
+          this.setState({
+            nom: '',
+            prenom: '',
+            apogee: '',
+            filière: '',
+            email: '',
+            password: '',
+            password2: '',
+          });
+
+      }
+
+
+
+     }
  const[errors, setErroes] = useState({})
 
  const [isSubmitting, setIsSubmitting] = useState(false)
@@ -46,28 +68,7 @@ const useForm = (callback, validate) => {
      }*/
 
 
-    SaveEtudiant = async e =>{
-      e.proventDefault();
-
-      const res = await axios.post('http://127.0.0.1:8000/api/add-etudiant',this.State);
-      if(res.data.status === 200){
-           
-          console.log(res.data.message);
-          this.setState({
-            nom: '',
-            prenom: '',
-            apogee: '',
-            filière: '',
-            email: '',
-            password: '',
-            password2: '',
-          });
-
-      }
-
-
-
-     }
+  
    }
 
 
