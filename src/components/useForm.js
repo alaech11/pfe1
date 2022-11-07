@@ -36,17 +36,6 @@ const useForm = (callback, validate) => {
       }},[errors])
 
    return{handleChange, values, handleSubmit, errors}
-
-   /*saveStudent = async e => {
-      e.preventDefault();
-  
-      const res = await axios.post( '',this.state);
-      if(res.data.status === 200){
-          console.log(res.data.message);  
-        }
-     }*/
-
-
   
    }
 
