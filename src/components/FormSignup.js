@@ -2,16 +2,37 @@ import React from 'react'
 import useForm from './useForm'
 import validate from './validateInfo';
 import './Form.css'
+import axios from "axios";
 
+ saveEtudiant = async e => {
+    e.proventDefault();
 
+    const res = await axios.post('http://127.0.0.1:8000/api/FromSignup',this.State);
+    if(res.data.status === 200){
+         
+        console.log(res.data.message);
+        this.setState({
+          nom: '',
+          prenom: '',
+          apogee: '',
+          filière: '',
+          email: '',
+          password: '',
+          password2: '',
+        });
+
+    }
+  }
 const Formsignup = ({submitForm}) => {
    const{handleChange, values, handleSubmit, errors} = useForm(submitForm, validate);
 
-   
+
+
 
   return (
     <div className='form-content-right'>
-       <form className='form' onSubmit={handleSubmit}>
+      <form  onSubmit={this.saveEtudiant} className='form'>
+       <form className='form' onSubmit={handleSubmit}  >
         <h1>créer votre compte:</h1>
         <div className='form-inputs'>
             <label htmlFor='nom' className='form-label'>
@@ -89,6 +110,7 @@ const Formsignup = ({submitForm}) => {
         <span className='form-input-login'>
         déjà inscrit? conectez-vous <a href='/conectez'>ici</a>
         </span>
+       </form>
        </form>
     </div>
   )
