@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import { useState, useEffect } from "react";
 
 const useForm = (callback, validate) => {
@@ -12,26 +12,6 @@ const useForm = (callback, validate) => {
         password: '',
         password2: '',
  }) 
-  SaveEtudiant = async e => {
-      e.proventDefault();
-
-      const res = await axios.post('http://127.0.0.1:8000/api/FromSignup',this.State);
-      if(res.data.status === 200){
-           
-          console.log(res.data.message);
-          this.setState({
-            nom: '',
-            prenom: '',
-            apogee: '',
-            filière: '',
-            email: '',
-            password: '',
-            password2: '',
-          });
-
-      }
-    }
-
 
  const[errors, setErroes] = useState({})
 
