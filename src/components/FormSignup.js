@@ -2,6 +2,7 @@ import React from 'react'
 import useForm from './useForm'
 import validate from './validateInfo';
 import './Form.css'
+/*import axios from 'axios';*/
 
 
 
@@ -32,7 +33,7 @@ const Formsignup = ({submitForm}) => {
 
   return (
     <div className='form-content-right'>
-   {/*  <form  onSubmit={this.saveEtudiant} className='form'>*/} 
+   {/*  <form  onSubmit={this.saveEtudiant} className='form'> */} 
        <form className='form' onSubmit={handleSubmit}  >
         <h1>créer votre compte:</h1>
         <div className='form-inputs'>
