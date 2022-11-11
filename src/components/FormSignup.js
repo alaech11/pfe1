@@ -16,7 +16,6 @@ const Formsignup = ({submitForm}) => {
 
   return (
     <div className='form-content-right'>
-      
        <form className='form' onSubmit={handleSubmit}  >
         <h1>créer votre compte:</h1>
         <div className='form-inputs'>
