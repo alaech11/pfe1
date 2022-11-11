@@ -5,12 +5,13 @@ import './Form.css'
 import axios from 'axios';
 
 
+
 const Formsignup = ({submitForm}) => {
    const{handleChange, values, handleSubmit, errors} = useForm(submitForm, validate);
  
 
-saveEtudiant = async (e) => {
-    e.proventDefault();
+saveEtudiant = async event => {
+    event.proventDefault();
 
     const res = await axios.post('http://127.0.0.1:8000/api/inscrivez',this.State);
     if(res.data.status === 200){
