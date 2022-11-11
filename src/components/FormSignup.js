@@ -34,7 +34,7 @@ saveEtudiant = async (e) => {
 
   return (
     <div className='form-content-right'>
-   <form  onSubmit={this.saveEtudiant()} className='form'> 
+   <form  onSubmit={this.saveEtudiant} className='form'> 
        <form className='form' onSubmit={handleSubmit}  >
         <h1>créer votre compte:</h1>
         <div className='form-inputs'>
