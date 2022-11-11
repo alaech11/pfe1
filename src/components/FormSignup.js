@@ -18,7 +18,7 @@ const Formsignup = ({submitForm}) => {
   password2: '',
 }
 
-saveEtudiant = async (e) => {
+handleSubmit = async (e) => {
     e.proventDefault();
 
     const res = await axios.post('http://127.0.0.1:8000/api/inscrivez',this.State);
@@ -42,7 +42,7 @@ saveEtudiant = async (e) => {
 
   return (
     <div className='form-content-right'>
-      <form  onSubmit={this.saveEtudiant} className='form'> 
+      <form  onSubmit={this.handleSubmit} className='form'> 
        <form className='form' onSubmit={handleSubmit}  >
         <h1>créer votre compte:</h1>
         <div className='form-inputs'>
