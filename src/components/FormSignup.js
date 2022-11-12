@@ -95,7 +95,6 @@ const Formsignup = ({submitForm}) => {
         déjà inscrit? conectez-vous <a href='/conectez'>ici</a>
         </span>
        </form>
-   
     </div>
   )
 }

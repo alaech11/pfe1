@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import axios from "axios";
+/*import axios from "axios";*/
 
 const useForm = (callback, validate) => {
 
@@ -25,8 +25,9 @@ const useForm = (callback, validate) => {
         [name]: value
     })
  }
- const handleSubmit = async (e) => {
-    e.preventDefault();
+
+ /*const saveEtudiant = async (e) =>{
+   e.preventDefault();
     const res = await axios.post('http://127.0.0.1:8000/api/inscrivez',this.State);
     if(res.data.status === 200){
          
@@ -41,8 +42,11 @@ const useForm = (callback, validate) => {
           password2: '',
         });
 
-    }
-  
+    
+ }
+}*/
+ const handleSubmit = e => {
+   e.preventDefault();
     setErroes(validate(values))
     setIsSubmitting(true)
  }
