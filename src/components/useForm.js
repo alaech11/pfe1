@@ -32,6 +32,10 @@ const useForm = (callback, validate) => {
 }*/
  const handleSubmit = async (e) => {
    e.preventDefault();
+   
+   setErroes(validate(values))
+    setIsSubmitting(true)
+    
     const res = await axios.post('http://127.0.0.1:8000/api/inscrivez',this.State);
     if(res.data.status === 200){
          
@@ -48,8 +52,7 @@ const useForm = (callback, validate) => {
 
     
  }
-    setErroes(validate(values))
-    setIsSubmitting(true)
+    
  }
    useEffect(() => {
       if (Object.keys(errors).length === 0 && isSubmitting) {
