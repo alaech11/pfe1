@@ -7,35 +7,36 @@ state = {
 nom: '',
 prenom: '',
 apogee: '',
-filière: '',
+filliere: '',
 email: '',
 password: '',
 password2: '',
 }
 handleInput = (e) =>{
   this.setState({
-    [e.target.nom]: e.target.value
+    [e.target.name]: e.target.value
   });
 }
 
 saveEtudiant = async (e) =>{
    e.preventDefault();
   
-   const res = await axios.post('http://localhost:8000/api/inscrivez', this.state);
+   console.log(this.state);
+   const res = await axios.post('http://localhost:8000/api/save', this.state);
     
+
+   console.log(res);
     if(res.data.status === 200){
       console.log(res.data.message);
       this.setState({
         nom: '',
         prenom: '',
         apogee: '',
-        filière: '',
+        filliere: '',
         email: '',
         password: '',
-        password2: '',
-      })
+        password2: '',})
     }
-
   }
 
   render() {
@@ -50,7 +51,7 @@ saveEtudiant = async (e) =>{
 
                   <div className='card-body'>
 
-                    <form onSubmit={this.saveEtudiant}>
+                    <form onSubmit={this.saveEtudiant} method="post">
                       <div className='form-group mb-3'>
                         <label> Nom </label>
                         <input type="text" name="nom" onChange={this.handleInput} placeholder='entrer votre nom' value={this.nom} className='form-control'/>
@@ -67,10 +68,10 @@ saveEtudiant = async (e) =>{
                       </div>
 
                       <div className='form-group mb-3'>
-                           <label> Filière</label>  
+                           <label> Filliere</label>  
              
                             <div class="input-group mb-3">
-                              <select className='form-input' name="filière" onChange={this.handleInput} value={this.filière} >
+                              <select className='form-input' name="filliere" onChange={this.handleInput} value={this.filière} >
                                <option value=''>--Selectioner la filière--</option>
                                <option value='A'>SMA</option>
                                <option value='I'>SMI</option>
