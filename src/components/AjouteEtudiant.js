@@ -53,24 +53,24 @@ saveEtudiant = async (e) =>{
                     <form onSubmit={this.saveEtudiant}>
                       <div className='form-group mb-3'>
                         <label> Nom </label>
-                        <input type="text" name="nom" onChange={this.handleInput} placeholder='entrer votre nom' value={this.state.nom} className='form-control'/>
+                        <input type="text" name="nom" onChange={this.handleInput} placeholder='entrer votre nom' value={this.nom} className='form-control'/>
                       </div>
 
                       <div className='form-group mb-3'>
                         <label> Prenom </label>
-                        <input type="text" name="prenom" onChange={this.handleInput} placeholder='entrer votre prenom' value={this.state.prenom} className='form-control'/>
+                        <input type="text" name="prenom" onChange={this.handleInput} placeholder='entrer votre prenom' value={this.prenom} className='form-control'/>
                       </div>
 
                       <div className='form-group mb-3'>
                         <label> Apogee </label>
-                        <input type="number" name="apogee" onChange={this.handleInput} placeholder='entrer votre apogee' value={this.state.apogee} className='form-control'/>
+                        <input type="number" name="apogee" onChange={this.handleInput} placeholder='entrer votre apogee' value={this.apogee} className='form-control'/>
                       </div>
 
                       <div className='form-group mb-3'>
                            <label> Filière</label>  
              
                             <div class="input-group mb-3">
-                              <select className='form-input' name="filière" onChange={this.handleInput} value={this.state.filière} >
+                              <select className='form-input' name="filière" onChange={this.handleInput} value={this.filière} >
                                <option value=''>--Selectioner la filière--</option>
                                <option value='A'>SMA</option>
                                <option value='I'>SMI</option>
@@ -84,17 +84,17 @@ saveEtudiant = async (e) =>{
 
                       <div className='form-group mb-3'>
                         <label> Email </label>
-                        <input type="email" name="email" onChange={this.handleInput} placeholder='entrer votre email' value={this.state.email} className='form-control'/>
+                        <input type="email" name="email" onChange={this.handleInput} placeholder='entrer votre email' value={this.email} className='form-control'/>
                       </div>
 
                       <div className='form-group mb-3'>
                         <label> Mot de passe </label>
-                        <input type="password" name="password" onChange={this.handleInput} placeholder='entrer votre Mot de passe' value={this.state.password} className='form-control'/>
+                        <input type="password" name="password" onChange={this.handleInput} placeholder='entrer votre Mot de passe' value={this.password} className='form-control'/>
                       </div>
 
                       <div className='form-group mb-3'>
                         <label> Confirmer mot de passe </label>
-                        <input type="password" name="password2" onChange={this.handleInput} placeholder='confirmer votre mot de passe' value={this.state.password2} className='form-control'/>
+                        <input type="password" name="password2" onChange={this.handleInput} placeholder='confirmer votre mot de passe' value={this.password2} className='form-control'/>
                       </div>
 
                       <div className='form-group mb-3'>
@@ -115,4 +115,4 @@ saveEtudiant = async (e) =>{
   }
 }
 
-export default AjouteEtudiant;
+export default AjouteEtudiant
