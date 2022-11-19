@@ -1,16 +1,23 @@
 import axios from 'axios';
 import React, { Component } from 'react'
+import './ajoute.css'
+
+
+
 
 class AjouteEtudiant extends Component {
+
+  
 
 state = {
 nom: '',
 prenom: '',
-apogee: '',
-filliere: '',
+apogee:'',
+filiere: '',
 email: '',
 password: '',
 password2: '',
+errors: {},
 }
 handleInput = (e) =>{
   this.setState({
@@ -18,16 +25,74 @@ handleInput = (e) =>{
   });
 }
 
+formval = () => {
+  const {nom,prenom,apogee,filiere,email,password,password2} = this.state;
+  let isvalid = true;
+  const errors = {};
+  if (!nom.trim()) {
+    errors.nom = 'Nom requis';
+    isvalid = false;
+  }
+
+
+  if (!prenom.trim()) {
+      errors.prenom = 'Prenom requis';
+      isvalid = false;
+    }
+
+    if (!apogee) {
+      errors.apogee = 'Apogee requis';
+      isvalid = false;
+    } else if (apogee.length !== 8) {
+      errors.apogee = 'Apogee doit être 8 characters';
+      isvalid = false;
+    } 
+    
+    if (!filiere) {
+      errors.filiere = 'filière requis';
+      isvalid = false;
+    }
+ 
+
+  if (!email) {
+    errors.email = 'Email requis';
+    isvalid = false;
+  } else if (!/\S+@etu.uae.ac.ma+/.test(email)) {
+    errors.email = 'L’adresse Email n’est pas valide';
+    isvalid = false;
+  }
+
+
+  if (!password) {
+    errors.password = 'Mots de passe requis';
+    isvalid = false;
+  } else if (password.length < 6) {
+    errors.password = 'Mots de passe doit être 6 characters ou plus';
+    isvalid = false;
+  }
+
+  if (!password2) {
+    errors.password2 = 'Mots de passe requis';
+    isvalid = false;
+  } else if (password2 !== password) {
+    errors.password2 = 'Les mots de passe ne correspondent pas';
+    isvalid = false;
+  }
+  this.setState({errors});
+  return isvalid;
+}
+
 saveEtudiant = async (e) =>{
    e.preventDefault();
-  
+  const isvalid = this.formval();
+  if(isvalid){
+
    console.log(this.state);
    const res = await axios.post('http://localhost:8000/api/save', this.state);
-    
-
    console.log(res);
     if(res.data.status === 200){
-      console.log(res.data.message);
+      console.log(res.data.message);}
+
       this.setState({
         nom: '',
         prenom: '',
@@ -35,18 +100,21 @@ saveEtudiant = async (e) =>{
         filliere: '',
         email: '',
         password: '',
-        password2: '',})
-    }
+        password2: '',})}
+    
   }
 
   render() {
+    
+    const {errors} = this.state;
+
     return (
       <div className='container'>
         <div className='row'>
             <div className='col-md-6'>
                 <div className='card'>
                     <div className='card-header'>
-                        <h4>Ajouter Etudiant</h4>
+                        <h4>créer votre compte:</h4>
                     </div>
 
                   <div className='card-body'>
@@ -55,65 +123,88 @@ saveEtudiant = async (e) =>{
                       <div className='form-group mb-3'>
                         <label> Nom </label>
                         <input type="text" name="nom" onChange={this.handleInput} placeholder='entrer votre nom' value={this.nom} className='form-control'/>
+                        
+                         
                       </div>
 
                       <div className='form-group mb-3'>
                         <label> Prenom </label>
                         <input type="text" name="prenom" onChange={this.handleInput} placeholder='entrer votre prenom' value={this.prenom} className='form-control'/>
+                      
+                      
                       </div>
 
                       <div className='form-group mb-3'>
                         <label> Apogee </label>
                         <input type="number" name="apogee" onChange={this.handleInput} placeholder='entrer votre apogee' value={this.apogee} className='form-control'/>
+
+                      
                       </div>
 
                       <div className='form-group mb-3'>
                            <label> Filliere</label>  
              
                             <div class="input-group mb-3">
-                              <select className='form-input' name="filliere" onChange={this.handleInput} value={this.filière} >
-                               <option value=''>--Selectioner la filière--</option>
-                               <option value='A'>SMA</option>
-                               <option value='I'>SMI</option>
-                               <option value='P'>SMP</option>
-                               <option value='C'>SMC</option>
-                               <option value='VI'>SVI</option>
-                               <option value='TU'>STU</option>
+                              <select className='form-input' name="filiere" onChange={this.handleInput} value={this.filiere} >
+                               <option value=''>--Selectioner la filiere--</option>
+                               <option value='SMA'>SMA</option>
+                               <option value='SMI'>SMI</option>
+                               <option value='SMP'>SMP</option>
+                               <option value='SMC'>SMC</option>
+                               <option value='SVI'>SVI</option>
+                               <option value='STU'>STU</option>
                               </select>
+                              
                             </div>
+                           
                        </div>  
 
                       <div className='form-group mb-3'>
                         <label> Email </label>
-                        <input type="email" name="email" onChange={this.handleInput} placeholder='entrer votre email' value={this.email} className='form-control'/>
+                        <input type="email" name="email" onChange={this.handleInput} placeholder='entrer votre email' value={this.state.email} className='form-control'/>
+                         
+
+                       
+                       
                       </div>
 
                       <div className='form-group mb-3'>
                         <label> Mot de passe </label>
-                        <input type="password" name="password" onChange={this.handleInput} placeholder='entrer votre Mot de passe' value={this.password} className='form-control'/>
+                        <input type="password" name="password" onChange={this.handleInput} placeholder='entrer votre Mot de passe' value={this.state.password} className='form-control'/>
+
+                       
                       </div>
 
                       <div className='form-group mb-3'>
                         <label> Confirmer mot de passe </label>
-                        <input type="password" name="password2" onChange={this.handleInput} placeholder='confirmer votre mot de passe' value={this.password2} className='form-control'/>
-                      </div>
-
-                      <div className='form-group mb-3'>
+                        <input type="password" name="password2" onChange={this.handleInput} placeholder='confirmer votre mot de passe' value={this.state.password2} className='form-control'/>
                         
+                       
+                      </div>
+                            <div>
+                              <label className='cadre'>!! message d'erreur !!</label>
+                              {Object.keys(errors).map((value)=>{
+                               return <div style={{color : "red"}} >{errors[value]}</div>
+                                      })}</div> 
+                      <div className='form-group mb-3'>
+                             
                         <button type='submit' className='btn btn-primary'>S'inscrir</button>
+                        
+                  
                         </div>
 
 
                     </form>
-
+        
                   </div>
 
                 </div>
             </div>
         </div>
-      </div>
+      </div>    
+               
     )
   }
 }
 
-export default AjouteEtudiant
+export default AjouteEtudiant;
