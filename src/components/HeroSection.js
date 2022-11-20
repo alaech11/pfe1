@@ -27,7 +27,7 @@ function HeroSection() {
           buttonSize='btn--large'
           
         >
-          CONECTEZ-VOUS 
+          CONNECTEZ-VOUS 
         </Button2>
       </div>
     </div>
