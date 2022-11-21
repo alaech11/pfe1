@@ -10,13 +10,13 @@ class AjouteEtudiant extends Component {
   
 
 state = {
-nom: '',
-prenom: '',
-apogee:'',
-filiere: '',
-email: '',
-password: '',
-password2: '',
+nom: "",
+prenom: "",
+apogee: "",
+filiere: "",
+email: "",
+password: "",
+password2: "",
 errors: {},
 }
 handleInput = (e) =>{
@@ -91,16 +91,16 @@ saveEtudiant = async (e) =>{
    const res = await axios.post('http://localhost:8000/api/save', this.state);
    console.log(res);
     if(res.data.status === 200){
-      console.log(res.data.message);}}
+      console.log(res.data.message);}
 
-      this.state({
-        nom: '',
-        prenom: '',
-        apogee: '',
-        filliere: '',
-        email: '',
-        password: '',
-        password2: '',})
+      this.setState({
+        nom: "",
+        prenom: "",
+        apogee: "",
+        filiere: "",
+        email: "",
+        password: "",
+        password2: ""})}
     
   }
 
@@ -142,11 +142,11 @@ saveEtudiant = async (e) =>{
                       </div>
 
                       <div className='form-group mb-3'>
-                           <label> Filliere</label>  
+                           <label> Filière</label>  
              
                             <div class="input-group mb-3">
                               <select className='form-input' name="filiere" onChange={this.handleInput} value={this.filiere} >
-                               <option value=''>--Selectioner la filiere--</option>
+                               <option value=''>--Selectioner la filière--</option>
                                <option value='SMA'>SMA</option>
                                <option value='SMI'>SMI</option>
                                <option value='SMP'>SMP</option>
@@ -193,7 +193,7 @@ saveEtudiant = async (e) =>{
                      
                         </div>
                                     <span className='form-group mb-3'>
-                                     déjà inscrit? conectez-vous <a href='/'>ici</a>
+                                     déjà inscrit? connectez-vous <a href='/'>ici</a>
                                       </span>
 
                     </form>
