@@ -47,7 +47,7 @@ export const Button2 = ({
                       <div className='form-group mb-3'>
                              
                         <button type='submit' className='btn btn-primary'>Connecter</button>
-                        
+                        <a  className='color' href='/password'>Mot de passe oublié ?</a>
                   
                         </div>
         </form>: null

@@ -6,7 +6,7 @@ import Accueil from './components/pages/Accueil';
 import Projets from './components/pages/Projets'
 import Contact from './components/pages/Contact'
 import Inscrivez from './components/pages/Inscrivez';
-import Connectez from './components/pages/Connectez';
+import Password from './components/pages/Password';
 import Conseil from './components/pages/Conseil';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
            <Route path='/Contact' element={<Contact/>}/>
            <Route path='/Conseil' element={<Conseil/>}/>
            <Route path='/Inscrivez' element={<Inscrivez/>}/>
-           <Route path='/Connectez' element={<Connectez/>}/>
+           <Route path='/Password' element={<Password/>}/>
 
 
         </Routes>

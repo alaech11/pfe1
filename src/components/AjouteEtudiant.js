@@ -91,16 +91,16 @@ saveEtudiant = async (e) =>{
    const res = await axios.post('http://localhost:8000/api/save', this.state);
    console.log(res);
     if(res.data.status === 200){
-      console.log(res.data.message);}
+      console.log(res.data.message);}}
 
-      this.setState({
+      this.state({
         nom: '',
         prenom: '',
         apogee: '',
         filliere: '',
         email: '',
         password: '',
-        password2: '',})}
+        password2: '',})
     
   }
 
@@ -190,9 +190,11 @@ saveEtudiant = async (e) =>{
                              
                         <button type='submit' className='btn btn-primary'>S'inscrir</button>
                         
-                  
+                     
                         </div>
-
+                                    <span className='form-group mb-3'>
+                                     déjà inscrit? conectez-vous <a href='/'>ici</a>
+                                      </span>
 
                     </form>
         
