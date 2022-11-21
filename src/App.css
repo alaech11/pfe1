@@ -10,7 +10,8 @@
   .Conseil ,
   .Projets,
   .Password,
-  .Inscrivez{
+  .Inscrivez
+  .User{
     display: flex;
     height: 90vh;
     align-items: center;
@@ -63,6 +64,15 @@
      font-size: 100px;
 
   }
+  .user{
+    /*background-image: url('/images/img-8.jpg');*/
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgb(0, 0, 0);
+    font-size: 100px;
+
+ }
 
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 

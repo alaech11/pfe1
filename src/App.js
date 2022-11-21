@@ -8,6 +8,8 @@ import Contact from './components/pages/Contact'
 import Inscrivez from './components/pages/Inscrivez';
 import Password from './components/pages/Password';
 import Conseil from './components/pages/Conseil';
+import User from './components/pages/User';
+import Enseignant from './components/pages/Enseignant';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
            <Route path='/Conseil' element={<Conseil/>}/>
            <Route path='/Inscrivez' element={<Inscrivez/>}/>
            <Route path='/Password' element={<Password/>}/>
+           <Route path='/User' element={<User/>}/>
+           <Route path='/Enseignant' element={<Enseignant/>}/>
 
 
         </Routes>
