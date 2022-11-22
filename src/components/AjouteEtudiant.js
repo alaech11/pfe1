@@ -85,10 +85,17 @@ formval = () => {
 saveEtudiant = async (e) =>{
    e.preventDefault();
   const isvalid = this.formval();
+  const addForm = document.getElementById("addForm");
+
   if(isvalid){
 
    console.log(this.state);
-   const res = await axios.post('http://localhost:8000/api/save', this.state);
+   const res = await axios.post('http://localhost:8000/api/save', this.state).then(
+    (res) => {
+      addForm.reset();
+      return res;
+    }
+   )
    console.log(res);
     if(res.data.status === 200){
       console.log(res.data.message);}
@@ -100,7 +107,7 @@ saveEtudiant = async (e) =>{
         filiere: "",
         email: "",
         password: "",
-        password2: ""})}
+      password2: ""})}
     
   }
 
@@ -119,7 +126,7 @@ saveEtudiant = async (e) =>{
 
                   <div className='card-body'>
 
-                    <form onSubmit={this.saveEtudiant} method="post">
+                    <form onSubmit={this.saveEtudiant} method="post" id="addForm">
                       <div className='form-group mb-3'>
                         <label> Nom </label>
                         <input type="text" name="nom" onChange={this.handleInput} placeholder='entrer votre nom' value={this.nom} className='form-control'/>
