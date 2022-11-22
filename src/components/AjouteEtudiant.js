@@ -18,6 +18,7 @@ email: "",
 password: "",
 password2: "",
 errors: {},
+
 }
 handleInput = (e) =>{
   this.setState({
@@ -82,20 +83,32 @@ formval = () => {
   return isvalid;
 }
 
+  
+  
+
+
+
 saveEtudiant = async (e) =>{
    e.preventDefault();
   const isvalid = this.formval();
   const addForm = document.getElementById("addForm");
 
   if(isvalid){
-
+ 
    console.log(this.state);
    const res = await axios.post('http://localhost:8000/api/save', this.state).then(
     (res) => {
+      if(res.data.message === "'unique_email'"){
+    alert("Email deja existe");
+  }
+  if(res.data.message === "'unique_apogee'"){
+    alert("Apogee deja existe");
+  }
       addForm.reset();
       return res;
     }
    )
+  
    console.log(res);
     if(res.data.status === 200){
       console.log(res.data.message);}
@@ -115,13 +128,16 @@ saveEtudiant = async (e) =>{
     
     const {errors} = this.state;
 
+
+
+
     return (
       <div className='container'>
         <div className='row'>
             <div className='col-md-6'>
                 <div className='card'>
                     <div className='card-header'>
-                        <h4>créer votre compte:</h4>
+                        <h4 className='color'>Créer votre compte:</h4>
                     </div>
 
                   <div className='card-body'>
@@ -144,8 +160,6 @@ saveEtudiant = async (e) =>{
                       <div className='form-group mb-3'>
                         <label> Apogee </label>
                         <input type="number" name="apogee" onChange={this.handleInput} placeholder='entrer votre apogee' value={this.apogee} className='form-control'/>
-
-                      
                       </div>
 
                       <div className='form-group mb-3'>

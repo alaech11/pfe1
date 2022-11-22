@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './Button2.css';
+import { Link } from 'react-router-dom';
 
 
 const STYLES = ['btn--primary', 'btn--outline', 'btn--test'];
@@ -45,8 +46,9 @@ export const Button2 = ({
                       
                       </div>
                       <div className='form-group mb-3'>
-                             
+                <Link to="/User">
                         <button type='submit' className='btn btn-primary'>Connecter</button>
+              </Link>
                         <a  className='color' href='/password'>Mot de passe oublié ?</a>
                   
                         </div>
