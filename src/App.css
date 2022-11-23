@@ -9,6 +9,7 @@
   .Contact,
   .Conseil ,
   .Projets,
+  .Forget,
   .Password,
   .Inscrivez
   .User{
@@ -54,6 +55,15 @@
      color: rgb(0, 0, 0);
      font-size: 100px;
    } 
+   .forget{
+    /*background-image: url('/images/img-8.jpg');*/
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgb(0, 0, 0);
+    font-size: 100px;
+
+ }
    
   .password{
      /*background-image: url('/images/img-8.jpg');*/

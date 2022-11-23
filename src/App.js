@@ -10,6 +10,7 @@ import Password from './components/pages/Password';
 import Conseil from './components/pages/Conseil';
 import User from './components/pages/User';
 import Enseignant from './components/pages/Enseignant';
+import Forget from './components/pages/Forget';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
            <Route path='/Contact' element={<Contact/>}/>
            <Route path='/Conseil' element={<Conseil/>}/>
            <Route path='/Inscrivez' element={<Inscrivez/>}/>
+           <Route path='/Forget' element={<Forget/>}/>
            <Route path='/Password' element={<Password/>}/>
            <Route path='/User' element={<User/>}/>
            <Route path='/Enseignant' element={<Enseignant/>}/>
