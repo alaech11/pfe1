@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react'
+import swal from 'sweetalert';
 import './ajoute.css'
 
 
@@ -99,10 +100,11 @@ saveEtudiant = async (e) =>{
    const res = await axios.post('http://localhost:8000/api/save', this.state).then(
     (res) => {
       if(res.data.message === "'unique_email'"){
-    alert("Email deja existe");
+    swal ( "Oops" ,  "Email deja existe" ,  "error" )
   }
   if(res.data.message === "'unique_apogee'"){
-    alert("Apogee deja existe");
+    swal ( "Oops" ,  "Apogee deja existe" ,  "error" )
+    
   }
       addForm.reset();
       return res;
@@ -111,7 +113,14 @@ saveEtudiant = async (e) =>{
   
    console.log(res);
     if(res.data.status === 200){
-      console.log(res.data.message);}
+      //console.log(res.data.message);
+      swal({
+        title: "Success!",
+        text: " vérifier votre boite email",
+        icon: "success",
+        button: "ok!",
+      });
+    }
 
       this.setState({
         nom: "",
@@ -132,7 +141,10 @@ saveEtudiant = async (e) =>{
 
 
     return (
+      
+     
       <div className='container'>
+        
         <div className='row'>
             <div className='col-md-6'>
                 <div className='card'>
@@ -225,7 +237,7 @@ saveEtudiant = async (e) =>{
             </div>
         </div>
       </div>    
-               
+              
     )
   }
 }
