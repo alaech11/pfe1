@@ -141,8 +141,8 @@ saveEtudiant = async (e) =>{
 
 
     return (
-      
-     
+      <>
+     <img src='images/logoM.jpg' alt='logo'autoPlay loop muted/>
       <div className='container'>
         
         <div className='row'>
@@ -237,7 +237,7 @@ saveEtudiant = async (e) =>{
             </div>
         </div>
       </div>    
-              
+              </>
     )
   }
 }
