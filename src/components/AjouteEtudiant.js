@@ -176,7 +176,7 @@ saveEtudiant = async (e) =>{
                       <div className='form-group mb-3'>
                            <label> Filière</label>  
              
-                            <div class="input-group mb-3">
+                            <div className="input-group mb-3">
                               <select className='form-input' name="filiere" onChange={this.handleInput} value={this.filiere} >
                                <option value=''>--Selectioner la filière--</option>
                                <option value='SMA'>SMA</option>

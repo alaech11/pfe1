@@ -13,7 +13,7 @@ import 'react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css
 
 
  function Projets(){
-    const [userList ,setUserList] = useState([]);
+  
     
  /*
     const colums =[
@@ -54,10 +54,16 @@ useEffect(() => {
   .then(result => setUserList(result))
   .catch(error => console.log(error))
 },[])
- 
+
+   const [userList ,setUserList] = useState([]);
+    const [query, setQuery] = useState("")
+
+    const search = (userList) =>{
+        return userList.filter((item) => item.name.toLowerCase().includes(query) || item.username.toLowerCase().includes(query) /*|| item.filière.toLowerCase().includes(query)*/)
+    }
     return (
         <div>
-<div class="container ">
+<div className="container ">
    <div className="crud shadow-lg p-3 mb-5 mt-5 bg-body rounded">   
     {/**   <BootstrapTable 
       bootstrap4 
@@ -69,8 +75,8 @@ useEffect(() => {
       /> */}
        
        
-       <div class="row" >
-            <div class="table-responsive " >
+       <div className="row" >
+            <div className="table-responsive " >
   
 
 
@@ -80,11 +86,12 @@ useEffect(() => {
 
   <span>Rechercher</span>
   
-  <input type="text"
-  width='20%'
-placeholder="chercher..."
-
-className='form-control'/>
+  <input 
+    type="text"
+    placeholder="chercher..."
+    onChange={(e) => setQuery(e.target.value.toLowerCase())}
+    className='form-control'
+    />
 
           </div> 
 
@@ -93,7 +100,7 @@ className='form-control'/>
           
 
  
-                 <table  class="table table-striped table-hover table-bordered" >
+                 <table  className="table table-striped table-hover table-bordered">
                  <thead>
                 <tr>
                   <th>Id</th>
@@ -108,17 +115,17 @@ className='form-control'/>
                 <tbody >
                 {
                     userList && userList.length> 0 ?
-                    userList.map((usr) =>
-                        <tr >
+                    search(userList).map((usr) =>
+                        <tr key={usr.id} >
                             
-                            <td> {usr.id}</td>
+                            <td>{usr.id}</td>
                             <td> {usr.name}</td>
                             <td> {usr.username}</td>
                             <td> {usr.email}</td>
                             <td> {usr.descreption}</td>
                             <td> {usr.filière}</td>
-                            <td> <a href="/postuler" class="view" title="Postuler" data-toggle="tooltip" ><i class="fa-solid fa-circle-plus"></i></a>
-                                 <a href="/description" class="view" title="View" data-toggle="tooltip" style={{color:"#10ab80"}}><i class="material-icons">&#xE417;</i></a>
+                            <td> <a href="/postuler" className="view" title="Postuler" data-toggle="tooltip" ><i className="fa-solid fa-circle-plus"></i></a>
+                                 <a href="/description" className="view" title="View" data-toggle="tooltip" style={{color:"#10ab80"}}><i className="material-icons">&#xE417;</i></a>
                             </td>
                         </tr>
                         )
