@@ -144,7 +144,6 @@ saveEtudiant = async (e) =>{
       <>
      <img src='images/logoM.jpg' alt='logo'autoPlay loop muted/>
       <div className='container'>
-        
         <div className='row'>
             <div className='col-md-6'>
                 <div className='card'>

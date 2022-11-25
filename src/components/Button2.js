@@ -49,8 +49,10 @@ export const Button2 = ({
                 <Link to="/User">
                         <button type='submit' className='btn btn-primary'>Connecter</button>
               </Link>
+              
+                 <div className='rght'>
                         <a  className='color' href='/forget'>Mot de passe oublié ?</a>
-                  
+                  </div>
                         </div>
         </form>: null
       }

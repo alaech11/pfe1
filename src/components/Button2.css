@@ -44,6 +44,16 @@
 
 .color{
   color: white;
+  
+}
+.rght{
+  text-align: right;
+  
+}
+
+.form-control{
+  width: 50%;
+
 }
     
   

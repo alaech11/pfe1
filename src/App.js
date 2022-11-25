@@ -11,8 +11,14 @@ import Conseil from './components/pages/Conseil';
 import User from './components/pages/User';
 import Enseignant from './components/pages/Enseignant';
 import Forget from './components/pages/Forget';
+import Postuler from './components/pages/Postuler';
+import Description from './components/pages/Description';
+
+
+
 
 function App() {
+
   return (
     <>
     
@@ -28,6 +34,8 @@ function App() {
            <Route path='/Password' element={<Password/>}/>
            <Route path='/User' element={<User/>}/>
            <Route path='/Enseignant' element={<Enseignant/>}/>
+           <Route path='/Postuler'  element={<Postuler/>}/>
+           <Route path='/Description' element={<Description/>}/>
 
 
         </Routes>

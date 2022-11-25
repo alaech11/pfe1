@@ -5,7 +5,7 @@ export class Forget extends Component {
 
   
   render(){
-    return 
+    return <h1 className='forget'>forget</h1>
 
         
 
