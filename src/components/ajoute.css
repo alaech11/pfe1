@@ -8,6 +8,11 @@
    background-color: rgb(208, 208, 208);
 }
 
+.row{
+  display: grid;
+  place-items: center;
+}
+
 
 
 

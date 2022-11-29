@@ -84,14 +84,13 @@ useEffect(() => {
 
   <br></br>< div className='form-group mb-3'>
 
-  <span>Rechercher</span>
-  
+  <span>Filtre :</span>
+  <br></br>
   <input 
     type="text"
     placeholder="chercher..."
     onChange={(e) => setQuery(e.target.value.toLowerCase())}
-    className='form-control'
-    />
+    className='form-control'/>
 
           </div> 
 

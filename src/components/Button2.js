@@ -1,4 +1,3 @@
-import React, {useState} from 'react';
 import './Button2.css';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +8,8 @@ const SIZES = ['btn--medium', 'btn--large'];
 
 export const Button2 = ({
   children,
-  type,
+  
+  onClick,
   buttonStyle,
   buttonSize
  }) => {
@@ -18,49 +18,18 @@ export const Button2 = ({
     : STYLES[0];
 
   const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
-
-  const[show,setShow]= useState(false)
   return (
     
 
-     <>
+    <Link to='/Enseignant' className='btn-mobile'>
       <button
         className={`btn ${checkButtonStyle} ${checkButtonSize}`}
-        onClick={()=> setShow(!show)}
-        type={type}>
+        onClick={onClick}
+        type='submit'>
 
         {children}
-      </button> <div>{
-        show? <form>
-          <div className='form-group mb-3'>
-                        <label className='color'> Email </label>
-                        <input type="email" name="email2"  placeholder='Entrer votre email'  className='form-control'/>
-                        
-                         
-                      </div>
-
-                      <div className='form-group mb-3'>
-                        <label className='color'> Mot de passe </label>
-                        <input type="password" name="password3"  placeholder='Entrer votre mot de passe'  className='form-control'/>
-                      
-                      
-                      </div>
-                      <div className='form-group mb-3'>
-                <Link to="/User">
-                        <button type='submit' className='btn btn-primary'>Connecter</button>
-              </Link>
-              
-                 <div className='rght'>
-                        <a  className='color' href='/forget'>Mot de passe oublié ?</a>
-                  </div>
-                        </div>
-        </form>: null
-      }
-      </div></>
-    
-
-    
-    
-    
+      </button> 
+        </Link>
+  
   );
 };
