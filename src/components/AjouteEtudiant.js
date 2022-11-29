@@ -148,7 +148,7 @@ saveEtudiant = async (e) =>{
             <div className='col-md-6'>
                 <div className='card'>
                     <div className='card-header'>
-                        <h4 className='color'>Créer votre compte:</h4>
+                        <h4 className='color'>Créer votre compte :</h4>
                     </div>
 
                   <div className='card-body'>
