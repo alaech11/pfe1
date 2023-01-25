@@ -1,14 +1,11 @@
 import axios from 'axios';
-import React, { Component } from 'react'
-import swal from 'sweetalert';
-import './ajoute.css'
-
+import React, { Component } from 'react';
+import swal from'sweetalert';
+import './ajoute.css';
 
 
 
 class AjouteEtudiant extends Component {
-
-  
 
 state = {
 nom: "",
