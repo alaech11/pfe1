@@ -1,6 +1,7 @@
 import React from 'react'
+import Appdash from '../../Appdash'
 
 export default function Enseignant() {
-  return  <h1 className="enseignant">Enseignant</h1>
+  return  <Appdash/>
   
 }

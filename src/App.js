@@ -17,14 +17,16 @@ import Description from './components/pages/Description';
 
 
 
+
+
 function App() {
 
   return (
     <>
-    
     <Router>
-      <Navbar/>
+       <Navbar/>
         <Routes>
+         
            <Route path='/' exact element={<Accueil/>}/>
            <Route path='/Projets' element={<Projets/>}/>
            {/*<Route path='/Contact' element={<Contact/>}/>*/}
@@ -35,9 +37,7 @@ function App() {
            <Route path='/User' element={<User/>}/>
            <Route path='/Enseignant' element={<Enseignant/>}/>
            <Route path='/Postuler'  element={<Postuler/>}/>
-           <Route path='/Description' element={<Description/>}/>
-
-
+           <Route path='/Description' element={<Description/>}/>         
         </Routes>
     </Router>
    </>

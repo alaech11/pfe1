@@ -62,7 +62,10 @@ useEffect(() => {
         return userList.filter((item) => item.name.toLowerCase().includes(query) || item.username.toLowerCase().includes(query) /*|| item.filière.toLowerCase().includes(query)*/)
     }
     return (
+        
+        <><img src='images/logoM.jpg' alt='logo'autoPlay loop muted/>
         <div>
+           
 <div className="container ">
    <div className="crud shadow-lg p-3 mb-5 mt-5 bg-body rounded">   
     {/**   <BootstrapTable 
@@ -83,6 +86,7 @@ useEffect(() => {
 
 
   <br></br>< div className='form-group mb-3'>
+   <h1>Projets de fin d'études 2022/2023</h1>
 
   <span>Filtre :</span>
   <br></br>
@@ -90,7 +94,7 @@ useEffect(() => {
     type="text"
     placeholder="chercher..."
     onChange={(e) => setQuery(e.target.value.toLowerCase())}
-    className='form-control'/>
+    className='form-control'/> 
 
           </div> 
 
@@ -141,7 +145,7 @@ useEffect(() => {
         </div>
  </div>
         
-    
+    </>
     )
     
 }
