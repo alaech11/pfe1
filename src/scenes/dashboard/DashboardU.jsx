@@ -7,12 +7,12 @@ import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
 import Header from "../../components/Header";
-import LineChartE from "../../components/LineChartE";
-import BarChartE from "../../components/BarChartE";
+import LineChartU from "../../components/LineChartU.jsx";
+import BarChartU from "../../components/BarChartU";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
 
-const Dashboard = () => {
+const DashboardU = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -55,7 +55,7 @@ const Dashboard = () => {
         >
           <StatBox
             title="6"
-            subtitle="Nombre de groupe ajouté"
+            subtitle="Lorem ipsum dolor sit amet"
             progress="0.75"
             increase="+2"
             icon={
@@ -74,7 +74,7 @@ const Dashboard = () => {
         >
           <StatBox
             title="431,225"
-            subtitle="lorem jdhfy"
+            subtitle="Lorem ipsum dolor sit amet"
             progress="0.50"
             increase="21"
             icon={
@@ -93,7 +93,7 @@ const Dashboard = () => {
         >
           <StatBox
             title="32,441"
-            subtitle="lorem lorem"
+            subtitle="Lorem ipsum dolor sit amet"
             progress="0.30"
             increase="5"
             icon={
@@ -112,7 +112,7 @@ const Dashboard = () => {
         >
           <StatBox
             title="1,325,134"
-            subtitle="lorem lorem"
+            subtitle="Lorem ipsum dolor sit amet"
             progress="0.80"
             increase="43"
             icon={
@@ -142,7 +142,7 @@ const Dashboard = () => {
                 fontWeight="600"
                 color={colors.grey[100]}
               >
-                Lorem lorem lorem
+             Lorem ipsum dolor sit amet
               </Typography>
               <Typography
                 variant="h3"
@@ -161,7 +161,7 @@ const Dashboard = () => {
             </Box>
           </Box>
           <Box height="250px" m="-20px 0 0 0">
-            <LineChartE isDashboard={true} />
+            <LineChartU isDashboard={true} />
           </Box>
         </Box>
         <Box
@@ -179,7 +179,7 @@ const Dashboard = () => {
             p="15px"
           >
             <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Récent tache completer
+              Lorem ipsum dolor sit amet
             </Typography>
           </Box>
           {mockTransactions.map((transaction, i) => (
@@ -223,7 +223,7 @@ const Dashboard = () => {
           p="30px"
         >
           <Typography variant="h5" fontWeight="600">
-            Tache completer
+          Lorem ipsum dolor sit amet
           </Typography>
           <Box
             display="flex"
@@ -237,9 +237,9 @@ const Dashboard = () => {
               color={colors.greenAccent[500]}
               sx={{ mt: "15px" }}
             >
-              15 tache completer
+           Lorem ipsum dolor sit amet
             </Typography>
-            <Typography>Inclus les taches de tous les groupes</Typography>
+            <Typography>Lorem ipsum dolor sit amet</Typography>
           </Box>
         </Box>
         <Box
@@ -252,10 +252,10 @@ const Dashboard = () => {
             fontWeight="600"
             sx={{ padding: "30px 30px 0 30px" }}
           >
-            Progrèe des Groupes
+           Lorem ipsum dolor sit amet
           </Typography>
           <Box height="250px" mt="-20px">
-            <BarChartE isDashboard={true} />
+            <BarChartU isDashboard={true} />
           </Box>
         </Box>
         <Box
@@ -280,4 +280,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardU;

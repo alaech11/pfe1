@@ -3,9 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Topbar from "./scenes/global/Topbar";
-import Sidebar from "./scenes/global/Sidebar";
+import SidebarU from "./scenes/global/SidebarU";
 //import { Box } from "@mui/system";
-import DashboardE from "./scenes/dashboard/DashboardE"
+import DashboardU from "./scenes/dashboard/DashboardU"
 import { Grid } from '@mui/material';
 
 /*import TeamE from "./scenes/team/TeamE"
@@ -19,7 +19,7 @@ import FAQ from "./scenes/faq";
 import Calendar from "./scenes/calendar/calendar";*/
 
 
-function Appdash() {
+function AppdashU() {
   const [theme, colorMode] = useMode();
   const [isSidebar, setIsSidebar] = useState(true);
 
@@ -44,7 +44,7 @@ function Appdash() {
       
        
         <Grid item xs={2}>
-      <Sidebar isSidebar={isSidebar} />
+      <SidebarU isSidebar={isSidebar} />
   </Grid> 
        
 
@@ -54,7 +54,7 @@ function Appdash() {
       
                 
             <Routes>
-              <Route path="/" element={<DashboardE/>} /> 
+              <Route path="/" element={<DashboardU/>} /> 
               
            {/**   <Route path="/TeamE" element={<TeamE/>} />
               <Route path="/contacts" element={<Contacts />} />
@@ -74,4 +74,4 @@ function Appdash() {
   );
 }
 
-export default Appdash;
+export default AppdashU;

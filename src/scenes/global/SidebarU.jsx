@@ -85,7 +85,7 @@ const Sidebar = () => {
                 ml="15px"
               >
                 <Typography variant="h3" color={colors.grey[100]}>
-                  ENSEIGANT
+                  ETUDIANT
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
@@ -103,10 +103,10 @@ const Sidebar = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  3adil Matalan
+                  Lorem ipsum 
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                   Encadré
+                Lorem ipsum dolor sit amet
                 </Typography>
               </Box>
             </Box>
@@ -115,7 +115,7 @@ const Sidebar = () => {
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
               title="Dashboard"
-              to="/Enseignant"
+              to="/User"
               icon={<HomeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -129,22 +129,22 @@ const Sidebar = () => {
               Data
             </Typography>
             <Item
-              title="Gérer les goupes"
-              to="/TeamE"
+              title="Gérer le goupe"
+              to="/TeamU"
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Contacts Informations"
-              to="/contactsE"
+              to="/contactsU"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Votre Projet"
-              to="/projetP"
+              title="Projet Choisis"
+              to="/projetCH"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -158,15 +158,15 @@ const Sidebar = () => {
               Pages
             </Typography>
             <Item
-              title="Ajouter un Projet"
-              to="/ajoutP"
+              title="Ajouter une Tache"
+              to="/ajoutT"
               icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Calendrier"
-              to="/CalendarE"
+              to="/CalendarU"
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -188,21 +188,21 @@ const Sidebar = () => {
             </Typography>
             <Item
               title="Bar Chart"
-              to="/bar"
+              to="/barU"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Pie Chart"
-              to="/pie"
+              to="/pieU"
               icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Line Chart"
-              to="/line"
+              to="/lineU"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
