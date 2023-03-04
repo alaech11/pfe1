@@ -138,15 +138,14 @@ saveEtudiant = async (e) =>{
 
 
     return (
-      
-     
+      <>
+     <img src='images/logoM.jpg' alt='logo'autoPlay loop muted/>
       <div className='container'>
-        
         <div className='row'>
             <div className='col-md-6'>
                 <div className='card'>
                     <div className='card-header'>
-                        <h4 className='color'>Créer votre compte:</h4>
+                        <h4 className='color'>Créer votre compte :</h4>
                     </div>
 
                   <div className='card-body'>
@@ -174,7 +173,7 @@ saveEtudiant = async (e) =>{
                       <div className='form-group mb-3'>
                            <label> Filière</label>  
              
-                            <div class="input-group mb-3">
+                            <div className="input-group mb-3">
                               <select className='form-input' name="filiere" onChange={this.handleInput} value={this.filiere} >
                                <option value=''>--Selectioner la filière--</option>
                                <option value='SMA'>SMA</option>
@@ -234,7 +233,7 @@ saveEtudiant = async (e) =>{
             </div>
         </div>
       </div>    
-              
+              </>
     )
   }
 }

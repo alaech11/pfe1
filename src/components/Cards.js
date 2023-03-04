@@ -13,13 +13,13 @@ function Cards() {
               src='images/download.jpg'
               text='oæearjgohæoaheæorhgæoaerg'
               label='AI'
-              path='/desciption'
+              path='/'
             />
             <CardItem
               src='images/OIP.jpg'
               text='ljaræeræojæowrogljsdnvluerahfluearg'
               label='web site'
-              path='/desciption'
+              path='/'
             />
           </ul>
           <ul className='cards__items'>
@@ -27,19 +27,19 @@ function Cards() {
               src='images/OIPe.jpg'
               text='ælUUAALJFLJSDHFGUEALluhsjhgljhdflghlsrthg'
               label='machin learning'
-              path='/desciption'
+              path='/'
             />
             <CardItem
               src='images/OIPg.jpg'
               text='jhajhfjhjhfdghuhafuhguhasdfhjghjhdafgu'
               label='games developement'
-              path='/desciption'
+              path='/'
             />
             <CardItem
               src='images/oom.jpeg'
               text='luhaerlguhuhdfahuuherhguhjhdfnljadgljhd'
               label='mobile app'
-              path='/desciption'
+              path='/'
             />
           </ul>
         </div>
