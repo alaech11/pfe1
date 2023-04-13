@@ -1,77 +1,46 @@
-import { useState } from "react";
+
 import { Routes, Route } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Topbar from "./scenes/global/Topbar";
-import Sidebar from "./scenes/global/Sidebar";
-//import { Box } from "@mui/system";
+import { MyProSidebarProviderE } from "./scenes/global/SidebarContextE";
 import DashboardE from "./scenes/dashboard/DashboardE"
-import { Grid } from '@mui/material';
 
-/*import TeamE from "./scenes/team/TeamE"
-import Invoices from "./scenes/invoices";
-import Contacts from "./scenes/contacts";
-import Bar from "./scenes/bar";
-import Form from "./scenes/form";
-import Line from "./scenes/line";
-import Pie from "./scenes/pie";
-import FAQ from "./scenes/faq";
-import Calendar from "./scenes/calendar/calendar";*/
+//import { Box } from "@mui/system";
 
 
-function Appdash() {
+/*import TeamE from "./scenes/team/TeamE";
+
+import ProjetP from "./scenes/projet/ProjetP";
+import AjoutP from "./scenes/form/AjoutP";
+import CalendarE from "./scenes/calendar/indexE";
+import Bar from "./scenes/bar/BarE";
+import Pie from "./scenes/pie/PieE";
+import Line from "./scenes/line/LineE";*/
+
+
+function AppdashU() {
   const [theme, colorMode] = useMode();
-  const [isSidebar, setIsSidebar] = useState(true);
+
 
   return (
     <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-      
-        <Grid container spacing={2}>
- 
-  
-
-        <Grid item  xs={12}>
-    
-        
-         
-         <Topbar setIsSidebar={setIsSidebar}/>   
-              
-  </Grid>
-
-
-      
-       
-        <Grid item xs={2}>
-      <Sidebar isSidebar={isSidebar} />
-  </Grid> 
-       
-
-             
-  <Grid item  xs={10}>
-    
-      
-                
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <MyProSidebarProviderE>
+        <div style={{ height: "100%", width: "100%", }}>
+          <main>
+            <Topbar />
             <Routes>
-              <Route path="/" element={<DashboardE/>} /> 
-              
-           {/**   <Route path="/TeamE" element={<TeamE/>} />
-              <Route path="/contacts" element={<Contacts />} />
-              <Route path="/invoices" element={<Invoices />} />
-              <Route path="/form" element={<Form />} />
-              <Route path="/bar" element={<Bar />} />
-              <Route path="/pie" element={<Pie />} />
-              <Route path="/line" element={<Line />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/calendar" element={<Calendar />} />*/}
-              
-           </Routes> </Grid>  
-       
-        </Grid>
-     </ThemeProvider>
-    </ColorModeContext.Provider>
+              <Route path="/" element={<DashboardE />} />
+
+            </Routes>
+          </main>
+        </div>
+      </MyProSidebarProviderE>
+    </ThemeProvider>
+  </ColorModeContext.Provider>
   );
 }
 
-export default Appdash;
+export default AppdashU;

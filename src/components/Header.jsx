@@ -5,7 +5,7 @@ const Header = ({ title, subtitle }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
-    <Box mb="30px">
+    <Box mb="30px" >
       <Typography
         variant="h2"
         color={colors.grey[100]}
@@ -14,7 +14,7 @@ const Header = ({ title, subtitle }) => {
       >
         {title}
       </Typography>
-      <Typography variant="h5" color={colors.greenAccent[400]}>
+      <Typography variant="h5" color={colors.greenAccent[500]}>
         {subtitle}
       </Typography>
     </Box>

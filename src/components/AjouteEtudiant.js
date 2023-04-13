@@ -56,7 +56,7 @@ formval = () => {
   if (!email) {
     errors.email = 'Email requis';
     isvalid = false;
-  } else if (!/\S+@etu.uae.ac.ma+/.test(email)) {
+  } else if (!/\S+@etu.uae.ac.ma+/.test(email) || !/\S+@eng.uae.ac.ma+/.test(email) ) {
     errors.email = 'L’adresse Email n’est pas valide';
     isvalid = false;
   }
@@ -134,18 +134,20 @@ saveEtudiant = async (e) =>{
     
     const {errors} = this.state;
 
-
+  
 
 
     return (
       <>
-     <img src='images/logoM.jpg' alt='logo'autoPlay loop muted/>
+   
+      
+   <img className='fex' src='images/FS-tetouan-logo.png' alt='logo'/>
       <div className='container'>
         <div className='row'>
             <div className='col-md-6'>
                 <div className='card'>
-                    <div className='card-header'>
-                        <h4 className='color'>Créer votre compte :</h4>
+                    <div >
+                        <h4 className="d-inline-flex p-2">Créer votre compte :</h4>
                     </div>
 
                   <div className='card-body'>
@@ -153,21 +155,21 @@ saveEtudiant = async (e) =>{
                     <form onSubmit={this.saveEtudiant} method="post" id="addForm">
                       <div className='form-group mb-3'>
                         <label> Nom </label>
-                        <input type="text" name="nom" onChange={this.handleInput} placeholder='entrer votre nom' value={this.nom} className='form-control'/>
+                        <input type="text" name="nom"  placeholder='Entrer votre nom' onChange={this.handleInput} value={this.nom} className='form-control'/>
                         
                          
                       </div>
 
                       <div className='form-group mb-3'>
                         <label> Prenom </label>
-                        <input type="text" name="prenom" onChange={this.handleInput} placeholder='entrer votre prenom' value={this.prenom} className='form-control'/>
+                        <input type="text" name="prenom" onChange={this.handleInput} placeholder='Entrer votre prenom' value={this.prenom} className='form-control'/>
                       
                       
                       </div>
 
                       <div className='form-group mb-3'>
                         <label> Apogee </label>
-                        <input type="number" name="apogee" onChange={this.handleInput} placeholder='entrer votre apogee' value={this.apogee} className='form-control'/>
+                        <input type="number" name="apogee" onChange={this.handleInput} placeholder='Entrer votre apogee' value={this.apogee} className='form-control'/>
                       </div>
 
                       <div className='form-group mb-3'>
@@ -190,7 +192,7 @@ saveEtudiant = async (e) =>{
 
                       <div className='form-group mb-3'>
                         <label> Email </label>
-                        <input type="email" name="email" onChange={this.handleInput} placeholder='entrer votre email' value={this.state.email} className='form-control'/>
+                        <input type="email" name="email" onChange={this.handleInput} placeholder='Entrer votre email' value={this.state.email} className='form-control'/>
                          
 
                        
@@ -199,14 +201,14 @@ saveEtudiant = async (e) =>{
 
                       <div className='form-group mb-3'>
                         <label> Mot de passe </label>
-                        <input type="password" name="password" onChange={this.handleInput} placeholder='entrer votre Mot de passe' value={this.state.password} className='form-control'/>
+                        <input type="password" name="password" onChange={this.handleInput} placeholder='Entrer votre Mot de passe' value={this.state.password} className='form-control'/>
 
                        
                       </div>
 
                       <div className='form-group mb-3'>
                         <label> Confirmer mot de passe </label>
-                        <input type="password" name="password2" onChange={this.handleInput} placeholder='confirmer votre mot de passe' value={this.state.password2} className='form-control'/>
+                        <input type="password" name="password2" onChange={this.handleInput} placeholder='Confirmer votre mot de passe' value={this.state.password2} className='form-control'/>
                         
                        
                       </div>
@@ -233,7 +235,7 @@ saveEtudiant = async (e) =>{
             </div>
         </div>
       </div>    
-              </>
+            </>
     )
   }
 }

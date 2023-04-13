@@ -1,9 +1,32 @@
 /*import React from "react";*/
 import '../../App.css'
-import AjouteEtudiant from '../AjouteEtudiant'
+import React from 'react';
+import '../Cards.css';
+import CardItem from '../CardItem';
 
 
 
 export default function Inscrivez(){
-    return <AjouteEtudiant/>
+    return  (
+    
+    <div className='cards'>
+   
+      <div className='cards__wrapper'>
+        <ul className='cards__items'>
+          <CardItem
+            src='images/prof.jpg'
+            text='Enseignat'
+            path='/ajouteprof'
+          />
+          <CardItem
+            src='images/etud.jpg'
+            text='Etudiant'
+            path='/ajoutetud'
+          />
+        </ul>
+       
+      </div>
+    </div>
+  
+  )
 }

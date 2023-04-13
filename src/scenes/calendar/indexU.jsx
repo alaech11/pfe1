@@ -6,7 +6,6 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
 import {
-    Button,
   Box,
   List,
   ListItem,
@@ -16,7 +15,11 @@ import {
 } from "@mui/material";
 import Header from "../../components/Header";
 import { tokens } from "../../theme";
-import { Link } from 'react-router-dom';
+
+
+import { MyProSidebarProviderU } from "../global/SidebarContextU";
+
+
 const CalendarU = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -49,6 +52,9 @@ const CalendarU = () => {
   };
 
   return (
+
+
+    <MyProSidebarProviderU>
     <Box m="20px">
       <Header title="Calendrierr" subtitle="Calendrier Complet Interactif" />
 
@@ -89,9 +95,9 @@ const CalendarU = () => {
         </Box>
 
         {/* CALENDAR */}
-        <Box flex="1 1 100%" ml="15px">
+        <Box flex="1 0 138%" ml="15px">
           <FullCalendar
-            height="75vh"
+            height="85vh"
             plugins={[
               dayGridPlugin,
               timeGridPlugin,
@@ -126,10 +132,7 @@ const CalendarU = () => {
           />
         </Box>
       </Box>
-      <br/>
-      <Link   to='/User' className='btn-mobile'>
-      <Button color="secondary" variant="contained"> RENTRE </Button></Link>
-    </Box>
+    </Box></MyProSidebarProviderU>
   );
 };
 

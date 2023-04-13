@@ -6,7 +6,6 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
 import {
-    Button,
   Box,
   List,
   ListItem,
@@ -16,7 +15,12 @@ import {
 } from "@mui/material";
 import Header from "../../components/Header";
 import { tokens } from "../../theme";
-import { Link } from 'react-router-dom';
+
+
+import { MyProSidebarProviderE } from "../global/SidebarContextE";
+
+
+
 const CalendarE = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -47,10 +51,13 @@ const CalendarE = () => {
       selected.event.remove();
     }
   };
-
-  return (
-    <Box m="20px">
-      <Header title="Calendrierr" subtitle="Calendrier Complet Interactif" />
+  return ( 
+           
+        
+ <MyProSidebarProviderE>   
+            
+    <Box m="20px">   
+     <Header title="Calendrierr" subtitle="Calendrier Complet Interactif" /> 
 
       <Box display="flex" justifyContent="space-between">
         {/* CALENDAR SIDEBAR */}
@@ -67,7 +74,7 @@ const CalendarE = () => {
                 key={event.id}
                 sx={{
                   backgroundColor: colors.greenAccent[500],
-                  margin: "10px 0",
+                  margin: "5px 0",
                   borderRadius: "2px",
                 }}
               >
@@ -89,9 +96,13 @@ const CalendarE = () => {
         </Box>
 
         {/* CALENDAR */}
-        <Box flex="1 1 100%" ml="15px">
+       
+      
+
+        
+        <Box flex="1 0 138%" ml="15px">
           <FullCalendar
-            height="75vh"
+            height="85vh"
             plugins={[
               dayGridPlugin,
               timeGridPlugin,
@@ -125,11 +136,10 @@ const CalendarE = () => {
             ]}
           />
         </Box>
-      </Box>
-      <br/>
-      <Link   to='/Enseignant' className='btn-mobile'>
-      <Button color="secondary" variant="contained"> RENTRE </Button></Link>
-    </Box>
+       </Box>
+    
+    </Box>  </MyProSidebarProviderE>
+        
   );
 };
 

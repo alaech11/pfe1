@@ -208,6 +208,7 @@ export const mockDataInvoices = [
     phone: "(665)121-5454",
     date: "03/12/2022",
   },
+ 
   {
     id: 2,
     name: "Cersei Lannister",
@@ -232,37 +233,21 @@ export const mockDataInvoices = [
     phone: "(921)425-6742",
     date: "03/21/2022",
   },
-  {
+ {
     id: 5,
-    name: "Daenerys Targaryen",
-    email: "daenerystargaryen@gmail.com",
-    cost: "1.24",
-    phone: "(421)445-1189",
-    date: "01/12/2021",
+    name: "Jon Snow",
+    email: "jonsnow@gmail.com",
+    cost: "21.24",
+    phone: "(665)121-5454",
+    date: "03/12/2022",
   },
   {
     id: 6,
-    name: "Ever Melisandre",
-    email: "evermelisandre@gmail.com",
-    cost: "63.12",
-    phone: "(232)545-6483",
-    date: "11/02/2022",
-  },
-  {
-    id: 7,
-    name: "Ferrara Clifford",
-    email: "ferraraclifford@gmail.com",
-    cost: "52.42",
-    phone: "(543)124-0123",
-    date: "02/11/2022",
-  },
-  {
-    id: 8,
-    name: "Rossini Frances",
-    email: "rossinifrances@gmail.com",
+    name: "Jon Snow",
+    email: "jonsnow@gmail.com",
     cost: "21.24",
-    phone: "(222)444-5555",
-    date: "05/02/2021",
+    phone: "(665)121-5454",
+    date: "03/12/2022",
   },
 ];
 
@@ -432,163 +417,193 @@ export const mockPieData = [
 
 export const mockLineData = [
   {
-    id: "japan",
-    color: tokens("dark").greenAccent[500],
+    id: "groupe5",
+    color: tokens("dark").greenAccent[800],
     data: [
       {
-        x: "plane",
+        x: "tache1",
         y: 101,
       },
+     
       {
-        x: "helicopter",
-        y: 75,
-      },
-      {
-        x: "boat",
+        x: "tache2",
         y: 36,
       },
       {
-        x: "train",
+        x: "tache3",
         y: 216,
       },
       {
-        x: "subway",
+        x: "tache4",
         y: 35,
       },
       {
-        x: "bus",
+        x: "tache5",
         y: 236,
       },
       {
-        x: "car",
+        x: "tache6",
         y: 88,
       },
       {
-        x: "moto",
+        x: "tache7",
         y: 232,
       },
+    
       {
-        x: "bicycle",
-        y: 281,
-      },
-      {
-        x: "horse",
-        y: 1,
-      },
-      {
-        x: "skateboard",
-        y: 35,
-      },
-      {
-        x: "others",
+        x: "tache8",
         y: 14,
       },
     ],
   },
   {
-    id: "france",
+    id: "groupe1",
+    color: tokens("dark").greenAccent[200],
+    data: [
+      {
+        x: "tache1",
+        y: 101,
+      },
+      {
+        x: "tache2",
+        y: 36,
+      },
+      {
+        x: "tache3",
+        y: 216,
+      },
+      {
+        x: "tache4",
+        y: 35,
+      },
+      {
+        x: "tache5",
+        y: 236,
+      },
+      {
+        x: "tache6",
+        y: 88,
+      },
+     
+      {
+        x: "tache8",
+        y: 14,
+      },
+    ],
+  },
+  {
+    id: "groupe2",
+    color: tokens("dark").greenAccent[500],
+    data: [
+      {
+        x: "tache1",
+        y: 101,
+      },
+      {
+        x: "tache2",
+        y: 36,
+      },
+      {
+        x: "tache3",
+        y: 216,
+      },
+      {
+        x: "tache4",
+        y: 35,
+      },
+      {
+        x: "tache5",
+        y: 236,
+      },
+      {
+        x: "tache6",
+        y: 88,
+      },
+      {
+        x: "tache7",
+        y: 232,
+      },
+      {
+        x: "tache8",
+        y: 14,
+      },
+    ],
+  },
+  {
+    id: "groupe3",
     color: tokens("dark").blueAccent[300],
     data: [
       {
-        x: "plane",
+        x: "tache1",
         y: 212,
       },
+      
       {
-        x: "helicopter",
-        y: 190,
-      },
-      {
-        x: "boat",
+        x: "tache2",
         y: 270,
       },
       {
-        x: "train",
+        x: "tache3",
         y: 9,
       },
       {
-        x: "subway",
+        x: "tache4",
         y: 75,
       },
       {
-        x: "bus",
+        x: "tache5",
         y: 175,
       },
       {
-        x: "car",
+        x: "tache6",
         y: 33,
       },
       {
-        x: "moto",
+        x: "tache7",
         y: 189,
       },
+
       {
-        x: "bicycle",
-        y: 97,
-      },
-      {
-        x: "horse",
-        y: 87,
-      },
-      {
-        x: "skateboard",
-        y: 299,
-      },
-      {
-        x: "others",
+        x: "tache8",
         y: 251,
       },
     ],
   },
   {
-    id: "us",
+    id: "groupe4",
     color: tokens("dark").redAccent[200],
     data: [
       {
-        x: "plane",
+        x: "tache1",
         y: 191,
       },
+      
       {
-        x: "helicopter",
-        y: 136,
-      },
-      {
-        x: "boat",
+        x: "tache2",
         y: 91,
       },
       {
-        x: "train",
+        x: "tache3",
         y: 190,
       },
       {
-        x: "subway",
+        x: "tache4",
         y: 211,
       },
       {
-        x: "bus",
+        x: "tache5",
         y: 152,
       },
       {
-        x: "car",
+        x: "tache6",
         y: 189,
       },
       {
-        x: "moto",
+        x: "tache7",
         y: 152,
       },
       {
-        x: "bicycle",
-        y: 8,
-      },
-      {
-        x: "horse",
-        y: 197,
-      },
-      {
-        x: "skateboard",
-        y: 107,
-      },
-      {
-        x: "others",
+        x: "tache8",
         y: 170,
       },
     ],

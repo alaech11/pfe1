@@ -1,18 +1,17 @@
-import { Box, Button } from "@mui/material";
+import { Box} from "@mui/material";
 import Header from "../../components/Header";
 import BarChartU from "../../components/BarChartU";
-import { Link } from 'react-router-dom';
+import { MyProSidebarProviderU } from "../global/SidebarContextU";
 const BarU = () => {
   return (
+    <>
+    <MyProSidebarProviderU>
     <Box m="20px">
       <Header title="Bar Chart" subtitle="Simple Bar Chart" />
-      <Box height="80vh">
+      <Box height="80vh" mr="-900px">
         <BarChartU />
       </Box>
-      <br/>
-      <Link   to='/User' className='btn-mobile'>
-      <Button color="secondary" variant="contained"> RENTRE</Button></Link>
-    </Box>
+    </Box></MyProSidebarProviderU></>
   );
 };
 

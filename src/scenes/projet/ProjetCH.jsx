@@ -1,11 +1,21 @@
-import { Box, Typography, useTheme, Button} from "@mui/material";
+import { Box, useTheme} from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { mockDataInvoices } from "../../components/data/mockData";
 import Header from "../../components/Header";
-import { Link } from 'react-router-dom';
+import { MyProSidebarProviderU } from "../global/SidebarContextU";
+import React, {useEffect, useState} from "react";
+
 
 const ProjetCH = () => {
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(result => setProjetCHList(result))
+    .catch(error => console.log(error))
+  },[])
+  const [projetCHList ,setProjetCHList] = useState([]);
+
+
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const columns = [
@@ -18,7 +28,7 @@ const ProjetCH = () => {
     },
     {
       field: "number",
-      headerName: "Nombre obligatoire de personnes",
+      headerName: "Nombre du personnes",
       flex: 1,
     },
     {
@@ -30,26 +40,24 @@ const ProjetCH = () => {
       field: "filière",
       headerName: "Filière",
       flex: 1,
-      renderCell: (params) => (
-        <Typography color={colors.greenAccent[500]}>
-          {params.row.cost}
-        </Typography>
-      ),
+      
     },
     {
-      field: "date",
-      headerName: "Date",
+      field: "reponse",
+      headerName: "Reponse",
       flex: 1,
     },
    
   ];
 
   return (
+
+    <MyProSidebarProviderU>
     <Box m="20px">
-      <Header title="Projet" subtitle="Liste des Projet Suggérer" />
+      <Header title="Projet" subtitle="Liste des Projet Choisis" />
       <Box
-        m="40px 0 0 0"
-        height="75vh"
+        mr="-930px"
+        height="55vh"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
@@ -61,7 +69,7 @@ const ProjetCH = () => {
             color: colors.greenAccent[300],
           },
           "& .MuiDataGrid-columnHeaders": {
-            backgroundColor: colors.blueAccent[700],
+            backgroundColor: colors.blueAccent[400],
             borderBottom: "none",
           },
           "& .MuiDataGrid-virtualScroller": {
@@ -69,20 +77,17 @@ const ProjetCH = () => {
           },
           "& .MuiDataGrid-footerContainer": {
             borderTop: "none",
-            backgroundColor: colors.blueAccent[700],
+            backgroundColor: colors.blueAccent[400],
           },
           "& .MuiCheckbox-root": {
             color: `${colors.greenAccent[200]} !important`,
           },
         }}
       >
-        <DataGrid checkboxSelection rows={mockDataInvoices} columns={columns} />
+        <DataGrid checkboxSelection rows={projetCHList} columns={columns} />
       </Box>
-      <br/>
-      
-      <Link   to='/User' className='btn-mobile'>
-      <Button color="secondary" variant="contained"> RENTRE</Button></Link>
-    </Box>
+
+    </Box></MyProSidebarProviderU>
   );
 };
 

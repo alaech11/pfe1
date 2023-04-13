@@ -1,40 +1,39 @@
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, TextField, MenuItem  } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
-import { MenuItem } from "react-pro-sidebar";
-import { Link } from 'react-router-dom';
+import { MyProSidebarProviderE } from "../global/SidebarContextE";
 
 
 const currencies = [
     {
-      value: 'SMA',
+      value: 'sma',
       label: 'SMA',
     },
     {
-      value: 'SMI',
+      value: 'smi',
       label: 'SMI',
     },
     {
-      value: 'SMP',
+      value: 'smp',
       label: 'SMP',
     },
     {
-      value: 'SMC',
+      value: 'smc',
       label: 'SMC',
     },
     {
-        value: 'SVI',
+        value: 'svi',
         label: 'SVI',
       },
       {
-        value: 'STU',
+        value: 'stu',
         label: 'STU',
       },
   ];
 const AjoutP = () => {
-  const isNonMobile = useMediaQuery("(min-width:600px)");
+  const isNonMobile = useMediaQuery("(min-width:700px)");
 
   const handleFormSubmit = (values) => {
     console.log(values);
@@ -54,6 +53,8 @@ const initialValues = {
 };
 
   return (
+
+    <MyProSidebarProviderE>
     <Box m="20px">
       <Header title="CRÉER PROJET" subtitle="Creér un Nouveau Projet" />
       
@@ -73,6 +74,7 @@ const initialValues = {
         }) => (
           <form onSubmit={handleSubmit}>
             <Box
+            mr="-50px"
               display="grid"
               gap="30px"
               gridTemplateColumns="repeat(4, minmax(0, 1fr))"
@@ -91,7 +93,7 @@ const initialValues = {
                 name="nomSujet"
                 error={!!touched.nomSujet && !!errors.nomSujet}
                 helperText={touched.nomSujet && errors.nomSujet}
-                sx={{ gridColumn: "span 2" }}
+                sx={{ gridColumn: "span 8" }}
               />
               <TextField
                 fullWidth
@@ -104,7 +106,7 @@ const initialValues = {
                 name="nombrePersonnes"
                 error={!!touched.nombrePersonnes && !!errors.nombrePersonnes}
                 helperText={touched.nombrePersonnes && errors.nombrePersonnes}
-                sx={{ gridColumn: "span 2" }}
+                sx={{ gridColumn: "span " }}
               />
               <TextField
                 select
@@ -131,7 +133,7 @@ const initialValues = {
 
 
               <TextField
-                fullWidth
+                TextField
                 multiline
                 id="filled-multiline-static"
                 variant="filled"
@@ -143,7 +145,7 @@ const initialValues = {
                 name="descreption"
                 error={!!touched.descreption && !!errors.descreption}
                 helperText={touched.descreption && errors.descreption}
-                sx={{ gridColumn: "span 4" }}
+                sx={{ gridColumn: "span 8" }}
               />
              
             </Box>
@@ -152,13 +154,11 @@ const initialValues = {
               Creér Projet
               </Button>
             </Box>
-            <br/>
-      <Link   to='/Enseignant' className='btn-mobile'>
-      <Button color="secondary" variant="contained"> RENTRE</Button></Link>
+          
           </form>
         )}
       </Formik>
-    </Box>
+    </Box></MyProSidebarProviderE>
   );
 };
 

@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from "react";
-import 'react-bootstrap-table-next/dist/react-bootstrap-table2.css'
-/*import paginationFactory from "react-bootstrap-table2-paginator";
-import BootstrapTable from "react-bootstrap-table-next";
-import filterFactory, {textFilter} from "react-bootstrap-table2-filter";*/
-import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css'
-import 'react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css'
+import {Box,useTheme } from "@mui/material";
+import { DataGrid } from "@mui/x-data-grid";
+import { tokens } from "../../theme";
+import Header from "../../components/Header";
+import "./pages.css"
 
 
 
@@ -27,26 +26,7 @@ import 'react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css
         
     ]
 
-  const pagination = paginationFactory({
-        page: 1,
-        sizePerPage: 5,
-        lastPageText : '>>',
-        firstPageText: '<<',
-        nextPageText: '>',
-        prePageText: '<',
-        showTotal: true,
-        alwaysShowAllBtns: true,
-        onPageChange: function (page, sizePerPage){
-            console.log('page', page);
-            console.log('sizePerPage', sizePerPage);
-        },
-        onSizePerPageChange: function(page, sizePerPage){
-            console.log('page', page);
-            console.log('sizePerPage', sizePerPage);
-        }
-    })
-/}*/
-  
+*/
 
 useEffect(() => {
   fetch('https://jsonplaceholder.typicode.com/users')
@@ -56,96 +36,74 @@ useEffect(() => {
 },[])
 
    const [userList ,setUserList] = useState([]);
-    const [query, setQuery] = useState("")
 
-    const search = (userList) =>{
-        return userList.filter((item) => item.name.toLowerCase().includes(query) || item.username.toLowerCase().includes(query) /*|| item.filière.toLowerCase().includes(query)*/)
-    }
+   const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  const columns = [
+    {field: "id", headerName: "ID" },
+    {field: "name", headerName: "Sujet", flex: 1, cellClassName: "name-column--cell",},
+    {field: "eng",headerName: "Enseignat",headerAlign: "left",align: "left", },
+    { field: "email", headerName: "Email", flex: 1,},
+    {field: "descp", headerName: "Descreption", flex: 1, },
+    {field: "fillere", headerName: "Filière", flex: 1, },
+    { field: "postuler", headerName: "Postuler", flex: 1,},
+  ];
+
+   
     return (
         
-        <><img src='images/logoM.jpg' alt='logo'autoPlay loop muted/>
-        <div>
+        <>
+        <img className="al" src='images/logoM.jpg' alt='logo'autoPlay loop muted/>
+       
            
-<div className="container ">
-   <div className="crud shadow-lg p-3 mb-5 mt-5 bg-body rounded">   
-    {/**   <BootstrapTable 
-      bootstrap4 
-      keyField="id" 
-      columns={colums} 
-      data={userList}
-      pagination={pagination}
-      filter={filterFactory()}
-      /> */}
+<div className="container-md">
+   <div className="crud shadow-lg p-3 mb-5 mt-5  bg-body rounded">   
        
-       
-       <div className="row" >
-            <div className="table-responsive " >
+         
   
 
+            <Box m="20px">
+      <Header title="Projets de fin d'etude 2022/2023:"  />
+      <Box
+        height="65vh"
+        sx={{
+          "& .MuiDataGrid-root": {
+            border: "none",
+          },
+          "& .MuiDataGrid-cell": {
+            borderBottom: "none",
+          },
+          "& .name-column--cell": {
+            color: colors.greenAccent[300],
+          },
+          "& .MuiDataGrid-columnHeaders": {
+            backgroundColor: colors.blueAccent[400],
+            borderBottom: "none",
+          },
+          "& .MuiDataGrid-virtualScroller": {
+            backgroundColor: colors.primary[400],
+          },
+          "& .MuiDataGrid-footerContainer": {
+            borderTop: "none",
+            backgroundColor: colors.blueAccent[400],
+          },
+          "& .MuiCheckbox-root": {
+            color: `${colors.greenAccent[200]} !important`,
+          },
+        }}
+      >
+        <DataGrid checkboxSelection rows={userList} columns={columns} />
+      </Box>
+     
+    </Box>
 
 
-
-  <br></br>< div className='form-group mb-3'>
-   <h1>Projets de fin d'études 2022/2023</h1>
-
-  <span>Filtre :</span>
-  <br></br>
-  <input 
-    type="text"
-    placeholder="chercher..."
-    onChange={(e) => setQuery(e.target.value.toLowerCase())}
-    className='form-control'/> 
-
-          </div> 
-
-          
-         
-          
-
- 
-                 <table  className="table table-striped table-hover table-bordered">
-                 <thead>
-                <tr>
-                  <th>Id</th>
-                  <th>Sujet</th>
-                  <th>Encadrant</th>
-                  <th>Email-Encadrant</th>
-                  <th>Descreption</th>
-                  <th>Filière</th>
-                  <th>Postuler</th>
-                </tr>
-                </thead>
-                <tbody >
-                {
-                    userList && userList.length> 0 ?
-                    search(userList).map((usr) =>
-                        <tr key={usr.id} >
-                            
-                            <td>{usr.id}</td>
-                            <td> {usr.name}</td>
-                            <td> {usr.username}</td>
-                            <td> {usr.email}</td>
-                            <td> {usr.descreption}</td>
-                            <td> {usr.filière}</td>
-                            <td> <a href="/postuler" className="view" title="Postuler" data-toggle="tooltip" ><i className="fa-solid fa-circle-plus"></i></a>
-                                 <a href="/description" className="view" title="View" data-toggle="tooltip" style={{color:"#10ab80"}}><i className="material-icons">&#xE417;</i></a>
-                            </td>
-                        </tr>
-                        )
-                          :'loading....'
-                }</tbody>
-            </table  > 
-           
-          
-              
-      
-                      </div>
-                  </div>
-               </div> 
+  
+                
+               
         </div>
  </div>
-        
-    </>
+   </>
     )
     
 }

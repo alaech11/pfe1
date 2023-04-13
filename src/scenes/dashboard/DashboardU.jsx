@@ -1,16 +1,19 @@
-import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, /*Button*/ IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { mockTransactions } from"../../components/data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import EmailIcon from "@mui/icons-material/Email";
+/*import EmailIcon from "@mui/icons-material/Email";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
+import StatBox from "../../components/StatBox";
+import BarChartU from "../../components/BarChartU";
+import ProgressCircle from "../../components/ProgressCircle";
+*/
 import Header from "../../components/Header";
 import LineChartU from "../../components/LineChartU.jsx";
-import BarChartU from "../../components/BarChartU";
-import StatBox from "../../components/StatBox";
-import ProgressCircle from "../../components/ProgressCircle";
+
+import RequestE from "../request/RequestE";
 
 const DashboardU = () => {
   const theme = useTheme();
@@ -22,7 +25,7 @@ const DashboardU = () => {
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
 
-        <Box>
+         {/* <Box>
           <Button
             sx={{
               backgroundColor: colors.blueAccent[700],
@@ -32,10 +35,10 @@ const DashboardU = () => {
               padding: "10px 20px",
             }}
           >
-            <DownloadOutlinedIcon sx={{ mr: "10px" }} />
+          <DownloadOutlinedIcon sx={{ mr: "10px" }} />
             Download Reports
           </Button>
-        </Box>
+        </Box>*/} 
       </Box>
 
       {/* GRID & CHARTS */}
@@ -45,7 +48,7 @@ const DashboardU = () => {
         gridAutoRows="140px"
         gap="20px"
       >
-        {/* ROW 1 */}
+        {/* ROW 1 
         <Box
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
@@ -121,7 +124,7 @@ const DashboardU = () => {
               />
             }
           />
-        </Box>
+        </Box>*/}
 
         {/* ROW 2 */}
         <Box
@@ -137,20 +140,13 @@ const DashboardU = () => {
             alignItems="center"
           >
             <Box>
-              <Typography
-                variant="h5"
-                fontWeight="600"
-                color={colors.grey[100]}
-              >
-             Lorem ipsum dolor sit amet
-              </Typography>
-              <Typography
+             <Typography
                 variant="h3"
                 fontWeight="bold"
                 color={colors.greenAccent[500]}
               >
-                59,342
-              </Typography>
+                État  D'avencement
+              </Typography> 
             </Box>
             <Box>
               <IconButton>
@@ -178,8 +174,8 @@ const DashboardU = () => {
             colors={colors.grey[100]}
             p="15px"
           >
-            <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Lorem ipsum dolor sit amet
+            <Typography color={colors.greenAccent[500]} variant="h5" fontWeight="600">
+            Vos Annonces
             </Typography>
           </Box>
           {mockTransactions.map((transaction, i) => (
@@ -216,63 +212,30 @@ const DashboardU = () => {
         </Box>
 
         {/* ROW 3 */}
-        <Box
-          gridColumn="span 4"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          p="30px"
-        >
-          <Typography variant="h5" fontWeight="600">
-          Lorem ipsum dolor sit amet
-          </Typography>
+       
+      
+      
+         
           <Box
-            display="flex"
-            flexDirection="column"
+          gridColumn="span 12"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+        >
+          <Box
+            mt="10px"
+            p="0 30px"
+            display="flex "
+            justifyContent="space-between"
             alignItems="center"
-            mt="25px"
           >
-            <ProgressCircle size="125" />
-            <Typography
-              variant="h5"
-              color={colors.greenAccent[500]}
-              sx={{ mt: "15px" }}
-            >
-           Lorem ipsum dolor sit amet
-            </Typography>
-            <Typography>Lorem ipsum dolor sit amet</Typography>
-          </Box>
-        </Box>
-        <Box
-          gridColumn="span 4"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-        >
-          <Typography
-            variant="h5"
-            fontWeight="600"
-            sx={{ padding: "30px 30px 0 30px" }}
-          >
-           Lorem ipsum dolor sit amet
-          </Typography>
-          <Box height="250px" mt="-20px">
-            <BarChartU isDashboard={true} />
-          </Box>
-        </Box>
-        <Box
-          gridColumn="span 4"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          padding="30px"
-        >
-          <Typography
-            variant="h5"
-            fontWeight="600"
-            sx={{ marginBottom: "15px" }}
-          >
-           Todo List
-          </Typography>
-          <Box height="200px">
+            <Box>  <Typography color={colors.greenAccent[500]} variant="h5" fontWeight="600">
             
+            Demande  pour rejoindre le groupe
+            </Typography>
+            </Box>
+          </Box>
+          <Box height="250px" m="-20px 0 0 0">
+            <RequestE isDashboard={true} />
           </Box>
         </Box>
       </Box>
