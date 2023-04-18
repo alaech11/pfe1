@@ -145,21 +145,21 @@ const MyProSidebar = () => {
             </Typography>
             <Item
               title="Gérer les goupes"
-              to="/TeamE"
+              to="/Appdash/TeamE"
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Ajouter un Projet"
-              to="/ajoutP"
+              to="/Appdash/ajoutP"
               icon={<AddBoxIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Votre Projet"
-              to="/projetP"
+              to="/Appdash/projetP"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -175,21 +175,21 @@ const MyProSidebar = () => {
           
             <Item
               title="Calendrier"
-              to="/CalendarE"
+              to="/Appdash/CalendarE"
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Prenez rendez-vous"
-              to="/Rendezvous"
+              to="/Appdash/RendezvousE"
               icon={<  AddIcCallIcon/>}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Ajouter document"
-              to="/documentEN"
+              to="/Appdash/documentEN"
               icon={<DocumentScannerIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -205,7 +205,7 @@ const MyProSidebar = () => {
             </Typography>
             <Item
               title="Bar Chart"
-              to="/barE"
+              to="/Appdash/barE"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}

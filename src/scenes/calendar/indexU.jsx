@@ -17,7 +17,6 @@ import Header from "../../components/Header";
 import { tokens } from "../../theme";
 
 
-import { MyProSidebarProviderU } from "../global/SidebarContextU";
 
 
 const CalendarU = () => {
@@ -54,7 +53,7 @@ const CalendarU = () => {
   return (
 
 
-    <MyProSidebarProviderU>
+  
     <Box m="20px">
       <Header title="Calendrierr" subtitle="Calendrier Complet Interactif" />
 
@@ -95,9 +94,9 @@ const CalendarU = () => {
         </Box>
 
         {/* CALENDAR */}
-        <Box flex="1 0 138%" ml="15px">
+        <Box flex="1 0 80%" ml="15px">
           <FullCalendar
-            height="85vh"
+            height="81vh"
             plugins={[
               dayGridPlugin,
               timeGridPlugin,
@@ -132,7 +131,7 @@ const CalendarU = () => {
           />
         </Box>
       </Box>
-    </Box></MyProSidebarProviderU>
+    </Box>
   );
 };
 

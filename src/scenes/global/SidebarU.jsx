@@ -20,6 +20,7 @@ import IosShareIcon from '@mui/icons-material/IosShare';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import AddIcCallIcon from '@mui/icons-material/AddIcCall';
 
 
 //import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
@@ -147,21 +148,21 @@ const MyProSidebar = () => {
             </Typography>
             <Item
               title="Gérer le goupe"
-              to="/TeamU"
+              to="/AppdashU/TeamU"
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Créer un Groupe "
-              to="/creeGoupe"
+              to="/AppdashU/creeGoupe"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Projet Choisis"
-              to="/projetCH"
+              to="/AppdashU/projetCH"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -174,30 +175,40 @@ const MyProSidebar = () => {
             >
               Pages
             </Typography>
+              <Item
+              title="Calendrier"
+              to="/AppdashU/CalendarU"
+              icon={<CalendarTodayOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            /> 
+            
             <Item
               title="Ajouter une Tache"
-              to="/ajoutT"
+              to="/AppdashU/ajoutT"
               icon={< AddBoxIcon  />}
               selected={selected}
               setSelected={setSelected}
             />
+         
             <Item
-              title="Calendrier"
-              to="/CalendarU"
-              icon={<CalendarTodayOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Partager votre progrès"
-              to="/progres"
+              title="Partager progrès"
+              to="/AppdashU/progres"
               icon={<IosShareIcon />}
               selected={selected}
               setSelected={setSelected}
             />
+           <Item
+              title="Prenez rendez-vous"
+              to="/AppdashU/RendezvousU"
+              icon={<AddIcCallIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
             <Item
               title="Ajouter document"
-              to="/documentE"
+              to="/AppdashU/documentE"
               icon={<DocumentScannerIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -212,7 +223,7 @@ const MyProSidebar = () => {
             </Typography>
             <Item
               title="Bar Chart"
-              to="/barU"
+              to="/AppdashU/barU"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -226,7 +237,7 @@ const MyProSidebar = () => {
             </Typography>
             <Item
               title="Profile"
-              to="/barU"
+              to="/AppdashU/"
               icon={< AccountCircleIcon  />}
               selected={selected}
               setSelected={setSelected}

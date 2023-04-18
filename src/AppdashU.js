@@ -6,18 +6,19 @@ import Topbar from "./scenes/global/Topbar";
 import { MyProSidebarProviderU } from "./scenes/global/SidebarContextU";
 
 
-//import { Box } from "@mui/system";
 import DashboardU from "./scenes/dashboard/DashboardU"
+import TeamU from "./scenes/team/TeamU";
 
-/*import TeamE from "./scenes/team/TeamE"
-import Invoices from "./scenes/invoices";
-import Contacts from "./scenes/contacts";
-import Bar from "./scenes/bar";
-import Form from "./scenes/form";
-import Line from "./scenes/line";
-import Pie from "./scenes/pie";
-import FAQ from "./scenes/faq";
-import Calendar from "./scenes/calendar/calendar";*/
+import CreeGoupe from "./scenes/creegroupe/CreeGroupe";
+import ProjetCH from "./scenes/projet/ProjetCH";
+import AjoutT from "./scenes/form/AjoutT";
+import CalendarU from "./scenes/calendar/indexU";
+import RendezvousU from './scenes/request/RendezvousU';
+import DocumentE from './scenes/document/DocumentE';
+import BarU from "./scenes/bar/BarU";
+import LineU from "./scenes/line/LineU";
+import Progres from './scenes/publier/Progres';
+
 
 
 function AppdashU() {
@@ -34,6 +35,18 @@ function AppdashU() {
             <Topbar />
             <Routes>
               <Route path="/" element={<DashboardU />} />
+              <Route path="/teamU" element={<TeamU/>} />
+              <Route path="/creeGoupe" element={<CreeGoupe />} />
+           <Route path="/projetCH" element={<ProjetCH />} />
+            <Route path="/ajoutT" element={<AjoutT />} />
+             <Route path="/calendarU" element={<CalendarU />} />
+             <Route path="/progres" element={<Progres/>}/>
+             <Route path="/RendezvousU" element={<RendezvousU/>}/>
+             <Route path="/documentE" element={<DocumentE />} />
+              <Route path="/barU" element={<BarU />} />
+              <Route path="/lineU" element={<LineU />} />
+
+
               
             </Routes>
           </main>

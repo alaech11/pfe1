@@ -8,10 +8,10 @@ import './ajoute.css';
 class AjouteProf extends Component {
 
 state = {
-nom: "",
-prenom: "",
+name: "",
+surname: "",
 code: "",
-departement: "",
+specialite: "",
 email: "",
 password: "",
 password2: "",
@@ -25,17 +25,17 @@ handleInput = (e) =>{
 }
 
 formval = () => {
-  const {nom,prenom,code,departement,email,password,password2} = this.state;
+  const {name,surname,code,specialite,email,password,password2} = this.state;
   let isvalid = true;
   const errors = {};
-  if (!nom.trim()) {
-    errors.nom = 'Nom requis';
+  if (!name.trim()) {
+    errors.name = 'Nom requis';
     isvalid = false;
   }
 
 
-  if (!prenom.trim()) {
-      errors.prenom = 'Prenom requis';
+  if (!surname.trim()) {
+      errors.surname = 'Prenom requis';
       isvalid = false;
     }
 
@@ -47,8 +47,8 @@ formval = () => {
       isvalid = false;
     } 
     
-    if (!departement) {
-      errors.departement = 'Departement requis';
+    if (!specialite) {
+      errors.specialite = 'Specialite requis';
       isvalid = false;
     }
  
@@ -94,7 +94,7 @@ saveProf = async (e) =>{
   if(isvalid){
  
    console.log(this.state);
-   const res = await axios.post('http://localhost:8000/api/save', this.state).then(
+   const res = await axios.post('http://localhost:8000/api/register', this.state).then(
     (res) => {
       if(res.data.message === "'unique_email'"){
     swal ( "Oops" ,  "Email deja existe" ,  "error" )
@@ -109,7 +109,7 @@ saveProf = async (e) =>{
    )
   
    console.log(res);
-    if(res.data.status === 200){
+    if(res.data.status === 'success'){
       //console.log(res.data.message);
       swal({
         title: "Success!",
@@ -120,10 +120,10 @@ saveProf = async (e) =>{
     }
 
       this.setState({
-        nom: "",
-        prenom: "",
+        name: "",
+        surname: "",
         code: "",
-        departement: "",
+        specialite: "",
         email: "",
         password: "",
       password2: ""})}
@@ -155,14 +155,14 @@ saveProf = async (e) =>{
                     <form onSubmit={this.saveProf} method="post" id="addForm">
                       <div className='form-group mb-3'>
                         <label> Nom </label>
-                        <input type="text" name="nom"  placeholder='Entrer votre nom' onChange={this.handleInput} value={this.nom} className='form-control'/>
+                        <input type="text" name="name"  placeholder='Entrer votre nom' onChange={this.handleInput} value={this.name} className='form-control'/>
                         
                          
                       </div>
 
                       <div className='form-group mb-3'>
                         <label> Prenom </label>
-                        <input type="text" name="prenom" onChange={this.handleInput} placeholder='Entrer votre prenom' value={this.prenom} className='form-control'/>
+                        <input type="text" name="surname" onChange={this.handleInput} placeholder='Entrer votre prenom' value={this.surname} className='form-control'/>
                       
                       
                       </div>
@@ -173,11 +173,11 @@ saveProf = async (e) =>{
                       </div>
 
                       <div className='form-group mb-3'>
-                           <label> Departement</label>  
+                           <label>Specialite</label>  
              
                             <div className="input-group mb-3">
-                              <select className='form-input' name="departement" onChange={this.handleInput} value={this.departement} >
-                               <option value=''>--Selectioner la departement--</option>
+                              <select className='form-input' name="specialite" onChange={this.handleInput} value={this.specialite} >
+                               <option value=''>--Selectioner la specialite--</option>
                                <option value='MAT'>Mathématiques </option>
                                <option value='INF'> Informatique​</option>
                                <option value='PHY'> Physique</option>

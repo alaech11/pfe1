@@ -1,6 +1,5 @@
 import {Box} from "@mui/material";
 import Header from "../../components/Header";
-import { MyProSidebarProviderE } from "../global/SidebarContextE";
 import { UploadOutlined } from '@ant-design/icons';
 import { Button, message, Upload } from 'antd';
 import { useState } from 'react';
@@ -55,7 +54,7 @@ const DocumentEN = () => {
 
   return (
 
-    <MyProSidebarProviderE>
+   
 
         <Box m="20px">
         <Header title="DOCUMENT" subtitle="Ajouter Votre Document" />
@@ -75,7 +74,7 @@ const DocumentEN = () => {
         {uploading ? 'Uploading' : 'Start Upload'}
       </Button>
   
-  </Box> </MyProSidebarProviderE>
+  </Box> 
 
   )
     }

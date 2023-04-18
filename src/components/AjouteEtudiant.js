@@ -8,8 +8,8 @@ import './ajoute.css';
 class AjouteEtudiant extends Component {
 
 state = {
-nom: "",
-prenom: "",
+name: "",
+surname: "",
 apogee: "",
 filiere: "",
 email: "",
@@ -25,17 +25,17 @@ handleInput = (e) =>{
 }
 
 formval = () => {
-  const {nom,prenom,apogee,filiere,email,password,password2} = this.state;
+  const {name,surname,apogee,filiere,email,password,password2} = this.state;
   let isvalid = true;
   const errors = {};
-  if (!nom.trim()) {
-    errors.nom = 'Nom requis';
+  if (!name.trim()) {
+    errors.name = 'Nom requis';
     isvalid = false;
   }
 
 
-  if (!prenom.trim()) {
-      errors.prenom = 'Prenom requis';
+  if (!surname.trim()) {
+      errors.surname = 'Prenom requis';
       isvalid = false;
     }
 
@@ -56,7 +56,7 @@ formval = () => {
   if (!email) {
     errors.email = 'Email requis';
     isvalid = false;
-  } else if (!/\S+@etu.uae.ac.ma+/.test(email) || !/\S+@eng.uae.ac.ma+/.test(email) ) {
+  } else if (!/\S+@etu.uae.ac.ma+/.test(email) ) {
     errors.email = 'L’adresse Email n’est pas valide';
     isvalid = false;
   }
@@ -94,7 +94,7 @@ saveEtudiant = async (e) =>{
   if(isvalid){
  
    console.log(this.state);
-   const res = await axios.post('http://localhost:8000/api/save', this.state).then(
+   const res = await axios.post('http://localhost:8000/api/register', this.state).then(
     (res) => {
       if(res.data.message === "'unique_email'"){
     swal ( "Oops" ,  "Email deja existe" ,  "error" )
@@ -109,7 +109,7 @@ saveEtudiant = async (e) =>{
    )
   
    console.log(res);
-    if(res.data.status === 200){
+    if(res.data.status === 'success'){
       //console.log(res.data.message);
       swal({
         title: "Success!",
@@ -120,8 +120,8 @@ saveEtudiant = async (e) =>{
     }
 
       this.setState({
-        nom: "",
-        prenom: "",
+        name: "",
+        surname: "",
         apogee: "",
         filiere: "",
         email: "",
@@ -155,14 +155,14 @@ saveEtudiant = async (e) =>{
                     <form onSubmit={this.saveEtudiant} method="post" id="addForm">
                       <div className='form-group mb-3'>
                         <label> Nom </label>
-                        <input type="text" name="nom"  placeholder='Entrer votre nom' onChange={this.handleInput} value={this.nom} className='form-control'/>
+                        <input type="text" name="name"  placeholder='Entrer votre nom' onChange={this.handleInput} value={this.name} className='form-control'/>
                         
                          
                       </div>
 
                       <div className='form-group mb-3'>
                         <label> Prenom </label>
-                        <input type="text" name="prenom" onChange={this.handleInput} placeholder='Entrer votre prenom' value={this.prenom} className='form-control'/>
+                        <input type="text" name="surname" onChange={this.handleInput} placeholder='Entrer votre prenom' value={this.surname} className='form-control'/>
                       
                       
                       </div>

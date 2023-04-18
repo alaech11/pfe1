@@ -18,32 +18,7 @@ import Appdash from './Appdash'
 import AppdashU from './AppdashU';
 
 
-import TeamE from "./scenes/team/TeamE";
-import ProjetP from "./scenes/projet/ProjetP";
-import AjoutP from "./scenes/form/AjoutP";
-import CalendarE from "./scenes/calendar/indexE";
-import DocumentEN from "./scenes/document/DocumentEN"
-import Bar from "./scenes/bar/BarE";
-import Line from "./scenes/line/LineE";
 
-
-import TeamU from "./scenes/team/TeamU";
-import CreeGoupe from "./scenes/creegroupe/CreeGroupe";
-import ProjetCH from "./scenes/projet/ProjetCH";
-import AjoutT from "./scenes/form/AjoutT";
-import CalendarU from "./scenes/calendar/indexU";
-import DocumentE from './scenes/document/DocumentE';
-import BarU from "./scenes/bar/BarU";
-import LineU from "./scenes/line/LineU";
-/*
-
-
-
-
-
-
-import FAQ from "./scenes/faq";
-*/
 
 
 
@@ -53,36 +28,11 @@ function App() {
 
   return (
     <>
+
+    
     <Router>
        <Navbar/>
         <Routes>
-          
-          <Route path="/teamE" element={<TeamE/>} />
-           <Route path="/projetP" element={<ProjetP />} />
-            <Route path="/ajoutP" element={<AjoutP />} />
-             <Route path="/calendarE" element={<CalendarE />} />
-             <Route path="/documentEN" element={<DocumentEN />} />
-              <Route path="/barE" element={<Bar />} />
-              <Route path="/lineE" element={<Line />} />
-
-              <Route path="/teamU" element={<TeamU/>} />
-          <Route path="/creeGoupe" element={<CreeGoupe />} />
-           <Route path="/projetCH" element={<ProjetCH />} />
-            <Route path="/ajoutT" element={<AjoutT />} />
-             <Route path="/calendarU" element={<CalendarU />} />
-             <Route path="/documentE" element={<DocumentE />} />
-              <Route path="/barU" element={<BarU />} />
-              <Route path="/lineU" element={<LineU />} />
-        {/**   
-             
-             
-             
-              
-             
-            
-             */}
-
-
            <Route path='/' exact element={<Accueil/>}/>
            <Route path='/Projets' element={<Projets/>}/>
            <Route path='/Presentation' element={<Presentation/>}/>
@@ -92,7 +42,6 @@ function App() {
            <Route path='/ajouteprof' element={<AjouteProf/>}/>
            <Route path='/Forget' element={<Forget/>}/>
            <Route path='/Password' element={<Password/>}/>
-          
            <Route path='/Appdash/*' element={<Appdash/>}/>
            <Route path='/AppdashU/*' element={<AppdashU/>}/>
            <Route path='/Postuler'  element={<Postuler/>}/>

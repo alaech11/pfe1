@@ -2,7 +2,6 @@ import { Box, useTheme} from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
-import { MyProSidebarProviderU } from "../global/SidebarContextU";
 import React, {useEffect, useState} from "react";
 
 
@@ -52,11 +51,11 @@ const ProjetCH = () => {
 
   return (
 
-    <MyProSidebarProviderU>
+  
     <Box m="20px">
       <Header title="Projet" subtitle="Liste des Projet Choisis" />
       <Box
-        mr="-930px"
+       
         height="55vh"
         sx={{
           "& .MuiDataGrid-root": {
@@ -87,7 +86,7 @@ const ProjetCH = () => {
         <DataGrid checkboxSelection rows={projetCHList} columns={columns} />
       </Box>
 
-    </Box></MyProSidebarProviderU>
+    </Box>
   );
 };
 

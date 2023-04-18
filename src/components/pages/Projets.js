@@ -10,7 +10,6 @@ import "./pages.css"
 
 
 
-
  function Projets(){
   
     
@@ -29,7 +28,7 @@ import "./pages.css"
 */
 
 useEffect(() => {
-  fetch('https://jsonplaceholder.typicode.com/users')
+  fetch('http://localhost:8000/api/Project/List')
   .then(response => response.json())
   .then(result => setUserList(result))
   .catch(error => console.log(error))
@@ -41,12 +40,13 @@ useEffect(() => {
   const colors = tokens(theme.palette.mode);
   const columns = [
     {field: "id", headerName: "ID" },
-    {field: "name", headerName: "Sujet", flex: 1, cellClassName: "name-column--cell",},
-    {field: "eng",headerName: "Enseignat",headerAlign: "left",align: "left", },
-    { field: "email", headerName: "Email", flex: 1,},
-    {field: "descp", headerName: "Descreption", flex: 1, },
-    {field: "fillere", headerName: "Filière", flex: 1, },
-    { field: "postuler", headerName: "Postuler", flex: 1,},
+    {field: "sujet", headerName: "Sujet", flex: 1, cellClassName: "name-column--cell",},
+    {field: "id_user",headerName: "Enseignat",headerAlign: "left",align: "left", },
+    {field: "filiere", headerName: "Filière", flex: 1, },
+    {field: "nombreperso", headerName: "Filière", flex: 1, },
+    {field: "description", headerName: "Descreption", flex: 1, },
+    
+    /*{ field: "postuler", headerName: "Postuler", flex: 1,},*/
   ];
 
    

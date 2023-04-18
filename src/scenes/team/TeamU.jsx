@@ -2,11 +2,8 @@ import { Box,useTheme} from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockDataTeam } from "../../components/data/mockData";
-//import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
-//import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
-//import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import Header from "../../components/Header";
-import { MyProSidebarProviderU } from "../global/SidebarContextU";
+
 
 
 
@@ -48,11 +45,11 @@ const TeamU = () => {
   ];
 
   return (
-    <MyProSidebarProviderU>
+  
     <Box m="20px">  
      <Header title="TEAM" subtitle="Managing the Team Members" />
       <Box
-        mr="-865px"
+       
         height="65vh"
         sx={{
           "& .MuiDataGrid-root": {
@@ -85,7 +82,7 @@ const TeamU = () => {
       </Box>{/* </Grid>  </Grid>*/}  
      
      </Box>
-    </MyProSidebarProviderU>
+   
   );
 };
 

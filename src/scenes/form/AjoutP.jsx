@@ -3,10 +3,44 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
-import { MyProSidebarProviderE } from "../global/SidebarContextE";
+import axios from 'axios';
+import swal from'sweetalert';
 
 
-const currencies = [
+const AjoutP = () => {
+  const isNonMobile = useMediaQuery("(min-width:700px)");
+
+const  handleFormSubmit = async (e) =>{
+   
+ console.log(e);
+    const res = await axios.post('http://localhost:8000/api//Project/Save/', e).then(
+      (res) => {
+        if(res.data.message === "'unique_email'"){
+      swal ( "Oops" ,  "Email deja existe" ,  "error" )
+    }
+    if(res.data.message === "'unique_apogee'"){
+      swal ( "Oops" ,  "Apogee deja existe" ,  "error" )
+      
+    }
+    
+        return res;
+    }  )   
+    console.log(res);
+    if(res.data.status === 'success'){
+      //console.log(res.data.message);
+      swal({
+        title: "Success!",
+        text: " Votre projet est Créer",
+        icon: "success",
+        button: "ok!",
+      });
+    }
+  
+  };
+
+
+
+  const currencies = [
     {
       value: 'sma',
       label: 'SMA',
@@ -32,12 +66,6 @@ const currencies = [
         label: 'STU',
       },
   ];
-const AjoutP = () => {
-  const isNonMobile = useMediaQuery("(min-width:700px)");
-
-  const handleFormSubmit = (values) => {
-    console.log(values);
-  };
 
 const checkoutSchema = yup.object().shape({
   nomSujet: yup.string().required("required"),
@@ -52,9 +80,10 @@ const initialValues = {
     descreption: "",
 };
 
+
   return (
 
-    <MyProSidebarProviderE>
+    
     <Box m="20px">
       <Header title="CRÉER PROJET" subtitle="Creér un Nouveau Projet" />
       
@@ -150,7 +179,7 @@ const initialValues = {
              
             </Box>
             <Box display="flex" justifyContent="end" mt="20px">
-              <Button type="submit" color="secondary" variant="contained">
+              <Button type="submit"  variant="contained">
               Creér Projet
               </Button>
             </Box>
@@ -158,7 +187,7 @@ const initialValues = {
           </form>
         )}
       </Formik>
-    </Box></MyProSidebarProviderE>
+    </Box>
   );
 };
 

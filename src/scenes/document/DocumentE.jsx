@@ -1,16 +1,12 @@
-import {Box} from "@mui/material";
+import React, { useState } from 'react';
+import { Box } from "@mui/material";
 import Header from "../../components/Header";
-import { MyProSidebarProviderU } from "../global/SidebarContextU";
 import { UploadOutlined } from '@ant-design/icons';
 import { Button, message, Upload } from 'antd';
-import { useState } from 'react';
-
-
 
 const DocumentE = () => {
   const [fileList, setFileList] = useState([]);
   const [uploading, setUploading] = useState(false);
-
 
   const handleUpload = () => {
     const formData = new FormData();
@@ -18,25 +14,26 @@ const DocumentE = () => {
       formData.append('files[]', file);
     });
     setUploading(true);
-    // You can use any AJAX library you like
+
+    // Send a POST request to the server with the file data
     fetch('http://localhost:8000/api/SaveProfessorFromFile', {
       method: 'POST',
       body: formData,
     })
       .then((res) => res.json())
-      .then(() => {
+      .then((data) => {
         setFileList([]);
-        message.success('upload successfully.');
+        message.success('Upload successful.');
+        // Access the response data and perform additional actions if needed
+        console.log('Response data:', data);
       })
       .catch(() => {
-        message.error('upload failed.');
+        message.error('Upload failed.');
       })
       .finally(() => {
         setUploading(false);
       });
   };
-
-
 
   const props = {
     onRemove: (file) => {
@@ -52,31 +49,27 @@ const DocumentE = () => {
     fileList,
   };
 
-
   return (
-
-    <MyProSidebarProviderU>
-
-        <Box m="20px">
-        <Header title="DOCUMENT" subtitle="Ajouter Votre Document" />
-      <Upload {...props} >
-        <Button icon={<UploadOutlined />}>Selecter Fichier</Button>
-      </Upload> 
-      <Button
-        type="primary"
-        onClick={handleUpload}
-        disabled={fileList.length === 0}
-        loading={uploading}
-        style={{
-          marginTop: 16,
-          justifyContent:'center'
-        }}
-      >
-        {uploading ? 'Uploading' : 'Start Upload'}
-      </Button>
   
-  </Box> </MyProSidebarProviderU>
+      <Box m="20px">
+        <Header title="DOCUMENT" subtitle="Ajouter Votre Document" />
+        <Upload {...props} >
+          <Button icon={<UploadOutlined />} style={{ marginTop: '16px' }}>
+            Sélectionner un fichier
+          </Button>
+        </Upload>
+        <Button
+          type="primary"
+          onClick={handleUpload}
+          disabled={fileList.length === 0 || uploading}
+          loading={uploading}
+          style={{ marginTop: '16px', justifyContent: 'center' }}
+        >
+          {uploading ? 'En cours de chargement' : 'Commencer le chargement'}
+        </Button>
+      </Box>
+    
+  );
+}
 
-  )
-    }
- export default DocumentE;
+export default DocumentE;

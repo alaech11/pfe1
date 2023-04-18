@@ -3,7 +3,6 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
-import { MyProSidebarProviderU } from "../global/SidebarContextU";
 
 
 const currencies = [
@@ -54,7 +53,7 @@ const initialValues = {
 
   return (
 
-    <MyProSidebarProviderU>
+  
     <Box m="20px">
       <Header title="CRÉER GROUPE" subtitle="Creér un Nouveau Groupe" />
       
@@ -74,7 +73,7 @@ const initialValues = {
         }) => (
           <form onSubmit={handleSubmit}>
             <Box
-            mr="-50px"
+            
               display="grid"
               gap="30px"
               gridTemplateColumns="repeat(4, minmax(0, 1fr))"
@@ -150,7 +149,7 @@ const initialValues = {
              
             </Box>
             <Box display="flex" justifyContent="end" mt="20px">
-              <Button type="submit" color="secondary" variant="contained">
+              <Button type="submit" variant="contained">
               Creér Groupe
               </Button>
             </Box>
@@ -158,7 +157,7 @@ const initialValues = {
           </form>
         )}
       </Formik>
-    </Box></MyProSidebarProviderU>
+    </Box>
   );
 };
 
